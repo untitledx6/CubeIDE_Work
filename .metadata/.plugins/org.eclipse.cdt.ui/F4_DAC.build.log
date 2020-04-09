@@ -1,0 +1,10 @@
+13:58:52 **** Incremental Build of configuration Debug for project F4_DAC ****
+make -j8 all 
+arm-none-eabi-size   F4_DAC.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6412	     20	   1588	   8020	   1f54	F4_DAC.elf
+Finished building: default.size.stdout
+ 
+
+13:58:52 Build Finished. 0 errors, 0 warnings. (took 640ms)
+

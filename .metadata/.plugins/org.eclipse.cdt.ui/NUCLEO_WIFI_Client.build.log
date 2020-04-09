@@ -1,0 +1,29 @@
+17:25:11 **** Incremental Build of configuration Debug for project NUCLEO_WIFI_Client ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/USER/WIFI/wifi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUCLEO_WIFI_Client/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/USER/WIFI/wifi.d" -MT"Core/USER/WIFI/wifi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/USER/WIFI/wifi.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUCLEO_WIFI_Client/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:26: warning: pointer targets in passing argument 1 of 'Client_SentTo_Server' differ in signedness [-Wpointer-sign]
+     Client_SentTo_Server("i got");
+                          ^~~~~~~
+In file included from ../Core/Src/main.c:28:0:
+D:/work/study/stm32/cubeIDEworkspace/NUCLEO_WIFI_Client/Core/USER/INC/wifi.h:18:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void Client_SentTo_Server(uint8_t *Str);
+      ^~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "NUCLEO_WIFI_Client.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUCLEO_WIFI_Client\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_WIFI_Client.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUCLEO_WIFI_Client.elf
+ 
+arm-none-eabi-objdump -h -S  NUCLEO_WIFI_Client.elf  > "NUCLEO_WIFI_Client.list"
+arm-none-eabi-objcopy  -O binary  NUCLEO_WIFI_Client.elf  "NUCLEO_WIFI_Client.bin"
+arm-none-eabi-size   NUCLEO_WIFI_Client.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12956	    120	   1920	  14996	   3a94	NUCLEO_WIFI_Client.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUCLEO_WIFI_Client.bin
+ 
+Finished building: NUCLEO_WIFI_Client.list
+ 
+
+17:25:13 Build Finished. 0 errors, 1 warnings. (took 1s.114ms)
+

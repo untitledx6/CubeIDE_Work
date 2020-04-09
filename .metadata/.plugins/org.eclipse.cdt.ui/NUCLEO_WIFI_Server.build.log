@@ -1,0 +1,36 @@
+17:23:47 **** Incremental Build of configuration Debug for project NUCLEO_WIFI_Server ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/USER/WIFI/wifi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUCLEO_WIFI/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/USER/WIFI/wifi.d" -MT"Core/USER/WIFI/wifi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/USER/WIFI/wifi.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUCLEO_WIFI/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:26: warning: pointer targets in passing argument 1 of 'Server_SentTo_Client' differ in signedness [-Wpointer-sign]
+     Server_SentTo_Client("i got");
+                          ^~~~~~~
+In file included from ../Core/Src/main.c:29:0:
+D:/work/study/stm32/cubeIDEworkspace/NUCLEO_WIFI/Core/USER/INC/wifi.h:14:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ void Server_SentTo_Client(uint8_t *Str);
+      ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:134:39: warning: pointer targets in passing argument 2 of 'Strcmp' differ in signedness [-Wpointer-sign]
+        if(Strcmp(Wifi_Command_Buffer, "+IPD") == 1) {
+                                       ^~~~~~
+In file included from ../Core/Src/main.c:29:0:
+D:/work/study/stm32/cubeIDEworkspace/NUCLEO_WIFI/Core/USER/INC/wifi.h:17:9: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ uint8_t Strcmp(uint8_t *s1, uint8_t *s2);
+         ^~~~~~
+arm-none-eabi-gcc -o "NUCLEO_WIFI_Server.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUCLEO_WIFI\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_WIFI_Server.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUCLEO_WIFI_Server.elf
+ 
+arm-none-eabi-objdump -h -S  NUCLEO_WIFI_Server.elf  > "NUCLEO_WIFI_Server.list"
+arm-none-eabi-objcopy  -O binary  NUCLEO_WIFI_Server.elf  "NUCLEO_WIFI_Server.bin"
+arm-none-eabi-size   NUCLEO_WIFI_Server.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15360	    120	   2048	  17528	   4478	NUCLEO_WIFI_Server.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUCLEO_WIFI_Server.bin
+ 
+Finished building: NUCLEO_WIFI_Server.list
+ 
+
+17:23:48 Build Finished. 0 errors, 2 warnings. (took 1s.167ms)
+

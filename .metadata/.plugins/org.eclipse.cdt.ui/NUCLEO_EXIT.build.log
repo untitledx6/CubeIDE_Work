@@ -1,0 +1,20 @@
+21:38:27 **** Incremental Build of configuration Debug for project NUCLEO_EXIT ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "NUCLEO_EXIT.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUCLEO_EXIT\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_EXIT.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUCLEO_EXIT.elf
+ 
+arm-none-eabi-objdump -h -S  NUCLEO_EXIT.elf  > "NUCLEO_EXIT.list"
+arm-none-eabi-objcopy  -O binary  NUCLEO_EXIT.elf  "NUCLEO_EXIT.bin"
+arm-none-eabi-size   NUCLEO_EXIT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7900	     20	   1700	   9620	   2594	NUCLEO_EXIT.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUCLEO_EXIT.bin
+Finished building: NUCLEO_EXIT.list
+ 
+ 
+
+21:38:28 Build Finished. 0 errors, 0 warnings. (took 1s.85ms)
+

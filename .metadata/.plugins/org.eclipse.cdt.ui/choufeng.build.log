@@ -1,0 +1,23 @@
+13:57:57 **** Incremental Build of configuration Debug for project choufeng ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "choufeng.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\choufeng\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="choufeng.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: choufeng.elf
+ 
+arm-none-eabi-objdump -h -S  choufeng.elf  > "choufeng.list"
+arm-none-eabi-objcopy  -O ihex  choufeng.elf  "choufeng.hex"
+arm-none-eabi-objcopy  -O binary  choufeng.elf  "choufeng.bin"
+arm-none-eabi-size   choufeng.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31816	    488	   1800	  34104	   8538	choufeng.elf
+Finished building: default.size.stdout
+ 
+Finished building: choufeng.hex
+Finished building: choufeng.bin
+ 
+ 
+Finished building: choufeng.list
+ 
+
+13:57:59 Build Finished. 0 errors, 0 warnings. (took 1s.273ms)
+

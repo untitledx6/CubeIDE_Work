@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NUCLEO_EXIT&apos; to &apos;NUCLEO_Button&apos;" description="Rename resource &apos;NUCLEO_EXIT&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/NUCLEO_EXIT" name="NUCLEO_Button" stamp="1585664742484" updateReferences="true"/>
+</session>

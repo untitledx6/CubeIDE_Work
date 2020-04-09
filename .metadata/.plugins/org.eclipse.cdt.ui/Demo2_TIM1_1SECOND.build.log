@@ -1,0 +1,7 @@
+22:28:07 **** Clean-only build of configuration Debug for project Demo2_TIM1_1SECOND ****
+make -j8 clean 
+rm -rf *
+ 
+
+22:28:08 Build Finished. 0 errors, 0 warnings. (took 413ms)
+

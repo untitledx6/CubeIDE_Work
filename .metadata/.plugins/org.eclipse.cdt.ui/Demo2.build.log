@@ -1,0 +1,20 @@
+21:23:31 **** Incremental Build of configuration Debug for project Demo2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Demo2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Demo2\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo2.elf
+ 
+arm-none-eabi-objdump -h -S  Demo2.elf  > "Demo2.list"
+arm-none-eabi-objcopy  -O binary  Demo2.elf  "Demo2.bin"
+arm-none-eabi-size   Demo2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7892	     20	   1700	   9612	   258c	Demo2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Demo2.bin
+Finished building: Demo2.list
+ 
+ 
+
+21:23:32 Build Finished. 0 errors, 0 warnings. (took 1s.122ms)
+

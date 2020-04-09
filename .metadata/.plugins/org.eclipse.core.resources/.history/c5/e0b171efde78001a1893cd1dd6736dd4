@@ -1,0 +1,4 @@
+#include "main.h"
+void Server_Init(void);
+void Server_SentTo_Client(uint8_t *Str);
+uint8_t Strlen(uint8_t *s);

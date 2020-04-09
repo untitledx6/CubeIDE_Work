@@ -1,0 +1,2 @@
+void Server_Init(void);
+void Server_SentTo_Client(char *Str);

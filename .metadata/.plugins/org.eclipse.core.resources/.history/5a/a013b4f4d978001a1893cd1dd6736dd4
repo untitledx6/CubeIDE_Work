@@ -1,0 +1,27 @@
+#include "wifi.h"
+void Server_Init(void) {
+	HAL_Delay(50);
+	printf("AT+RST\r\n");
+	HAL_Delay(50);
+	printf("AT+CWMODE=2\r\n");
+	HAL_Delay(50);
+	printf("AT+CIPMUX=1\r\n");
+	HAL_Delay(50);
+	printf("AT+CIPSERVER=1,8080\r\n");
+	HAL_Delay(50);
+}
+void Server_SentTo_Client(uint8_t *Str) {
+	HAL_Delay(50);
+	printf("AT+CIPSEND=0,%d\r\n", Strlen(Str) + 2);
+	HAL_Delay(50);
+	printf("%s\r\n", Str);
+	HAL_Delay(50);
+
+}
+ uint8_t Strlen(uint8_t *s) {
+	 for(uint8_t i = 0; i < 256; i++) {
+		 if(s[i] == '\0') {
+			 return i;
+		 }
+	 }
+ }

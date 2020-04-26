@@ -1,3 +1,8 @@
 STM32CubeMX.AskDoCodeGenerationOnIocSave=false
 STM32CubeMX.AskSwitchToCubeMxPerspective=false
+STM32CubeMX.FirmwareRepositoryPath=C\:/Users/untitled_x6/STM32Cube/Repository/
+STM32CubeMX.UpdaterCheck=false
+STM32CubeMX.UpdaterCheckInterval=5
+STM32CubeMX.UpdaterDataRefresh=dataRefreshDataOnly
+STM32CubeMX.UpdaterDataRefreshInterfval=3
 eclipse.preferences.version=1

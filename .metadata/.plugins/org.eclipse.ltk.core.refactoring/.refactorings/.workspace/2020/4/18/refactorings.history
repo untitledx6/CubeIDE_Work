@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Test&apos; to &apos;F1_FreeRTOS_LedAndOled&apos;" description="Rename resource &apos;Test&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Test" name="F1_FreeRTOS_LedAndOled" stamp="1587879880286" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;F1_FreeRTOS_LedAndOled&apos; to &apos;NUCLEO_FreeRTOS_LedAndOled&apos;" description="Rename resource &apos;F1_FreeRTOS_LedAndOled&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/F1_FreeRTOS_LedAndOled" name="NUCLEO_FreeRTOS_LedAndOled" stamp="1587879960545" updateReferences="true"/>
+</session>

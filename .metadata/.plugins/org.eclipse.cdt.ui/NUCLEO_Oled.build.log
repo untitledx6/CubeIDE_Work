@@ -1,28 +1,10 @@
-17:36:37 **** Incremental Build of configuration Debug for project NUCLEO_Oled ****
+11:35:25 **** Incremental Build of configuration Debug for project NUCLEO_Oled ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I"D:/work/study/stm32/cubeIDEworkspace/NUCLEO_Oled/Core/USER/INC" -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:108:25: warning: pointer targets in passing argument 3 of 'OLED_ShowString' differ in signedness [-Wpointer-sign]
-   OLED_ShowString(5, 3, "GPS", 16);
-                         ^~~~~
-In file included from ../Core/Src/main.c:29:0:
-D:/work/study/stm32/cubeIDEworkspace/NUCLEO_Oled/Core/USER/INC/oled.h:44:6: note: expected 'unsigned char *' but argument is of type 'char *'
- void OLED_ShowString(unsigned char x,unsigned char y, unsigned char *p,unsigned char Char_Size);
-      ^~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "NUCLEO_Oled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUCLEO_Oled\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_Oled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: NUCLEO_Oled.elf
- 
-arm-none-eabi-objdump -h -S  NUCLEO_Oled.elf  > "NUCLEO_Oled.list"
-arm-none-eabi-objcopy  -O binary  NUCLEO_Oled.elf  "NUCLEO_Oled.bin"
 arm-none-eabi-size   NUCLEO_Oled.elf 
    text	   data	    bss	    dec	    hex	filename
-  23808	   2852	   1820	  28480	   6f40	NUCLEO_Oled.elf
+  24088	   1508	   1820	  27416	   6b18	NUCLEO_Oled.elf
 Finished building: default.size.stdout
  
-Finished building: NUCLEO_Oled.bin
- 
-Finished building: NUCLEO_Oled.list
- 
 
-17:36:38 Build Finished. 0 errors, 1 warnings. (took 1s.239ms)
+11:35:26 Build Finished. 0 errors, 0 warnings. (took 608ms)
 

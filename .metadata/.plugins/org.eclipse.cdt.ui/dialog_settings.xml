@@ -5,7 +5,7 @@
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
-		<item key="size.width" value="576"/>
+		<item key="size.width" value="1024"/>
 		<item key="size.height" value="180"/>
 	</section>
 	<section name="OptionalMessageDialog.hide.">
@@ -28,5 +28,37 @@
 	</section>
 	<section name="CResourceRenameRefactoringInputPage">
 		<item key="updateReferences" value="true"/>
+	</section>
+	<section name="PDOMSearchPage">
+		<item key="caseSensitive" value="false"/>
+		<item key="searchFlags" value="227191"/>
+		<list key="previousPatterns">
+			<item value="StartDefaultTask"/>
+			<item value="Sys"/>
+			<item value="SysTic"/>
+			<item value="uwTick"/>
+			<item value="HAL_BUSY"/>
+			<item value="HAL_OK"/>
+			<item value="HAL_I2C_STATE_READY"/>
+			<item value="ALIGN"/>
+			<item value="Stack_Size"/>
+		</list>
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.browser.opentype.OpenTypeActionSettings">
+		<item key="show_namespaces" value="true"/>
+		<item key="show_classes" value="true"/>
+		<item key="show_structs" value="true"/>
+		<item key="show_typedefs" value="true"/>
+		<item key="show_enums" value="true"/>
+		<item key="show_unions" value="true"/>
+		<item key="show_functions" value="true"/>
+		<item key="show_variables" value="true"/>
+		<item key="show_enumerators" value="true"/>
+		<item key="show_macros" value="true"/>
+		<item key="show_lowlevel" value="true"/>
+		<item key="x" value="618"/>
+		<item key="y" value="0"/>
+		<item key="width" value="777"/>
+		<item key="height" value="1047"/>
 	</section>
 </section>

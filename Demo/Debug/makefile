@@ -24,24 +24,24 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Demo.elf \
+Demo1_GREEN_lED.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Demo.list \
+Demo1_GREEN_lED.list \
 
 OBJCOPY_BIN += \
-Demo.bin \
+Demo1_GREEN_lED.bin \
 
 
 # All Target
-all: Demo.elf secondary-outputs
+all: Demo1_GREEN_lED.elf secondary-outputs
 
 # Tool invocations
-Demo.elf: $(OBJS) $(USER_OBJS) D:\work\study\stm32\cubeIDEworkspace\Demo\STM32F103RBTX_FLASH.ld
-	arm-none-eabi-gcc -o "Demo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Demo\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Demo1_GREEN_lED.elf: $(OBJS) $(USER_OBJS) D:\work\study\stm32\cubeIDEworkspace\Demo\STM32F103RBTX_FLASH.ld
+	arm-none-eabi-gcc -o "Demo1_GREEN_lED.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Demo\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo1_GREEN_lED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -50,13 +50,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Demo.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Demo.list"
+Demo1_GREEN_lED.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Demo1_GREEN_lED.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Demo.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Demo.bin"
+Demo1_GREEN_lED.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Demo1_GREEN_lED.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

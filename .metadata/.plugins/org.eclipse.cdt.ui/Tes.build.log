@@ -1,0 +1,24 @@
+13:42:31 **** Incremental Build of configuration Debug for project Tes ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:92:11: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+   uint8_t i[4000] = {0};
+           ^
+arm-none-eabi-gcc -o "Tes.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Tes\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Tes.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Tes.elf
+ 
+arm-none-eabi-objdump -h -S  Tes.elf  > "Tes.list"
+arm-none-eabi-objcopy  -O binary  Tes.elf  "Tes.bin"
+arm-none-eabi-size   Tes.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5776	     20	   2148	   7944	   1f08	Tes.elf
+Finished building: default.size.stdout
+ 
+Finished building: Tes.bin
+Finished building: Tes.list
+ 
+ 
+
+13:42:32 Build Finished. 0 errors, 1 warnings. (took 1s.122ms)
+

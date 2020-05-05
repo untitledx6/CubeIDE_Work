@@ -117,7 +117,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of myTask02 */
-  osThreadDef(myTask02, StartTask02, osPriorityNormal, 0, 128);
+  osThreadDef(myTask02, StartTask02, osPriorityNormal, 0, 256);
   myTask02Handle = osThreadCreate(osThread(myTask02), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -173,10 +173,11 @@ void StartTask02(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+
 	 // OLED_DrawBMP(0, 0, 128, 8, BMP3);
 	  for(uint8_t i = 0; i < 200; i++) {
 		  OLED_ShowNum(0, 2, i, 3, 16);
-		 // OLED_ShowFlort(0, 4, (float)i, 16);
+		  //OLED_ShowFlort(0, 4, (float)i, 16);
 	  }
 	  //OLED_ShowFlort(0, 2, (float)5, 16);
 

@@ -31,24 +31,24 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Test.elf \
+NUCLEO_FreeRTOS_LedAndOled.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Test.list \
+NUCLEO_FreeRTOS_LedAndOled.list \
 
 OBJCOPY_BIN += \
-Test.bin \
+NUCLEO_FreeRTOS_LedAndOled.bin \
 
 
 # All Target
-all: Test.elf secondary-outputs
+all: NUCLEO_FreeRTOS_LedAndOled.elf secondary-outputs
 
 # Tool invocations
-Test.elf: $(OBJS) $(USER_OBJS) D:\work\study\stm32\cubeIDEworkspace\Test\STM32F103RBTX_FLASH.ld
-	arm-none-eabi-gcc -o "Test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+NUCLEO_FreeRTOS_LedAndOled.elf: $(OBJS) $(USER_OBJS) D:\work\study\stm32\cubeIDEworkspace\Test\STM32F103RBTX_FLASH.ld
+	arm-none-eabi-gcc -o "NUCLEO_FreeRTOS_LedAndOled.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_FreeRTOS_LedAndOled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -57,13 +57,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Test.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Test.list"
+NUCLEO_FreeRTOS_LedAndOled.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "NUCLEO_FreeRTOS_LedAndOled.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Test.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Test.bin"
+NUCLEO_FreeRTOS_LedAndOled.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "NUCLEO_FreeRTOS_LedAndOled.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

@@ -10,7 +10,7 @@ oled.c:102:6:OLED_ShowChar	32	static
 oled.c:124:15:oled_pow	24	static
 oled.c:136:6:OLED_ShowNum	24	static
 oled.c:156:6:OLED_ShowString	24	static
-oled.c:170:6:OLED_ShowFlort	40	static
+oled.c:170:6:OLED_ShowFlort	48	static
 oled.c:215:6:OLED_ShowCHinese	24	static
 oled.c:232:6:OLED_DrawBMP	32	static
 oled.c:250:6:OLED_Init	8	static

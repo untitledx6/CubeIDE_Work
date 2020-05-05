@@ -170,8 +170,8 @@ void OLED_ShowString(unsigned char x,unsigned char y,unsigned char *chr,unsigned
 void OLED_ShowFlort(unsigned char x,unsigned char y,float Da,unsigned char Char_Size)
 {
 	unsigned char j=0;
-	char chr[10]={0};
-
+	char chr[20]={0};
+	//sprintf(chr, "hahah");
 
 		if(Da<10)		//防止十位变化成个位小数点前移，导致小数点后两位产生一个不变的不可控制数字
 	{

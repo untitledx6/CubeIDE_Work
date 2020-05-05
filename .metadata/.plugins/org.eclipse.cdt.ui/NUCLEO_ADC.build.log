@@ -1,4 +1,4 @@
-17:51:22 **** Incremental Build of configuration Debug for project NUCLEO_ADC ****
+22:29:26 **** Incremental Build of configuration Debug for project NUCLEO_ADC ****
 make -j8 all 
 arm-none-eabi-size   NUCLEO_ADC.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   NUCLEO_ADC.elf
 Finished building: default.size.stdout
  
 
-17:51:23 Build Finished. 0 errors, 0 warnings. (took 527ms)
+22:29:27 Build Finished. 0 errors, 0 warnings. (took 640ms)
 

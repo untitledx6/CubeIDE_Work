@@ -1,0 +1,3 @@
+KalmanFilter.c:7:7:calculateAverage	32	static
+KalmanFilter.c:15:7:calculateSD	40	static
+KalmanFilter.c:24:7:KalmanFilter	56	static

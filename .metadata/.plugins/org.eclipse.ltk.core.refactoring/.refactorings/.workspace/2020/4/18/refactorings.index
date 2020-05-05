@@ -1,2 +1,6 @@
 1587879880286	Rename resource 'Test'
 1587879960545	Rename resource 'F1_FreeRTOS_LedAndOled'
+1588233540765	Delete resource 'NUClEO'
+1588234660678	Delete resource 'NUCLEO_SPI_master'
+1588234695198	Delete resource 'NUCLEO_SPP_master'
+1588259709909	Delete resource 'F4_SPI_slave'

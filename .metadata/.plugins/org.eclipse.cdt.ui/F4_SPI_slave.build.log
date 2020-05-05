@@ -1,0 +1,20 @@
+15:17:50 **** Incremental Build of configuration Debug for project F4_SPI_slave ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F4_SPI_slave.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_SPI_slave\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_SPI_slave.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F4_SPI_slave.elf
+ 
+arm-none-eabi-objdump -h -S  F4_SPI_slave.elf  > "F4_SPI_slave.list"
+arm-none-eabi-objcopy  -O binary  F4_SPI_slave.elf  "F4_SPI_slave.bin"
+arm-none-eabi-size   F4_SPI_slave.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8556	     20	   1700	  10276	   2824	F4_SPI_slave.elf
+Finished building: default.size.stdout
+ 
+Finished building: F4_SPI_slave.bin
+Finished building: F4_SPI_slave.list
+ 
+ 
+
+15:17:52 Build Finished. 0 errors, 0 warnings. (took 1s.475ms)
+

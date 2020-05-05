@@ -1,0 +1,20 @@
+18:49:30 **** Incremental Build of configuration Debug for project NUCLEO_FreeRTOS_LedAndOled ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/work/study/stm32/cubeIDEworkspace/Test/Core/USER/INC" -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc -o "NUCLEO_FreeRTOS_LedAndOled.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_FreeRTOS_LedAndOled.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUCLEO_FreeRTOS_LedAndOled.elf
+ 
+arm-none-eabi-objdump -h -S  NUCLEO_FreeRTOS_LedAndOled.elf  > "NUCLEO_FreeRTOS_LedAndOled.list"
+arm-none-eabi-objcopy  -O binary  NUCLEO_FreeRTOS_LedAndOled.elf  "NUCLEO_FreeRTOS_LedAndOled.bin"
+arm-none-eabi-size   NUCLEO_FreeRTOS_LedAndOled.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28612	   1512	   5832	  35956	   8c74	NUCLEO_FreeRTOS_LedAndOled.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUCLEO_FreeRTOS_LedAndOled.bin
+ 
+Finished building: NUCLEO_FreeRTOS_LedAndOled.list
+ 
+
+18:49:32 Build Finished. 0 errors, 0 warnings. (took 1s.792ms)
+

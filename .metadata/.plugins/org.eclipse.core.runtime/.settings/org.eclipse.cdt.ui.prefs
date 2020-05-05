@@ -1,5 +1,9 @@
+class_member_ascending_visibility_order=false
 eclipse.preferences.version=1
+function_output_parameters_before_input=false
+function_pass_output_parameters_by_pointer=false
 sourceHoverBackgroundColor=255,255,225
 spelling_locale_initialized=true
+spelling_user_dictionary_encoding=gbk
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

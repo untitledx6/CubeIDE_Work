@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="-1059"/>
-		<item key="DIALOG_Y_ORIGIN" value="-811"/>
+		<item key="DIALOG_X_ORIGIN" value="11"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item key="dialogHeight" value="-1"/>
-		<item key="dialogWidth" value="-1"/>
+		<item key="dialogHeight" value="991"/>
+		<item key="dialogWidth" value="1108"/>
 		<list key="orderedElements">
+			<item value="org.eclipse.ui.net.NetPreferences"/>
+			<item value="com.st.stm32cube.ide.mcu.debug.swv.core.SWVDatatraceTimeline"/>
+			<item value="com.st.stm32cube.ide.mcu.debug.swv.core.ui.datatraceview"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.preferences"/>
+			<item value="org.eclipse.e4.ui.parts"/>
+			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textEntries">
+			<item value="1"/>
+			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="textArray">
+			<item value="proxy"/>
+			<item value="sw"/>
+			<item value="swv"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
@@ -26,5 +38,12 @@
 		</list>
 	</section>
 	<section name="FileSystemImportWizard">
+	</section>
+	<section name="InstallationDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="-200"/>
+		<item key="DIALOG_Y_ORIGIN" value="-297"/>
+		<item key="DIALOG_WIDTH" value="1048"/>
+		<item key="DIALOG_HEIGHT" value="1080"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
 	</section>
 </section>

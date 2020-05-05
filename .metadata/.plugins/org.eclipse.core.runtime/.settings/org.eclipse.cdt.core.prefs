@@ -1,0 +1,4 @@
+astwriter.addOverride=false
+astwriter.placeConstRightOfType=false
+astwriter.preserveVirtual=true
+eclipse.preferences.version=1

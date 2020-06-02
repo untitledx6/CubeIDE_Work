@@ -1,0 +1,17 @@
+#include "flash.h"
+
+
+uint8_t Flash_Write_Page(uint32_t *Flash_Address, uint32_t *Data_Address) {
+
+	HAL_FLASH_Unlock(); //Unlock
+
+	FLASH_EraseInitTypeDef EraseInitStruct; //erase Struct init
+	EraseInitStruct.TypeErase = FLASH_TYPEERASE_PAGES;
+	EraseInitStruct.PageAddress = Flash_Address;
+	EraseInitStruct.NbPages = 1;
+
+	HAL_FLASH_Lock(); //Lock
+
+	return 0;
+
+}

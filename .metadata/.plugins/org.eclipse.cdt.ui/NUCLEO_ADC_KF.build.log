@@ -1,32 +1,10 @@
-18:32:10 **** Incremental Build of configuration Debug for project NUCLEO_ADC_KF ****
+15:41:10 **** Build of configuration Debug for project NUCLEO_ADC_KF ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUCLEO_ADC_KF/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:117:5: warning: implicit declaration of function 'swvPrint'; did you mean 'llrint'? [-Wimplicit-function-declaration]
-     swvPrint(0, "1", 2);
-     ^~~~~~~~
-     llrint
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:184:6: warning: conflicting types for 'swvPrint'
- void swvPrint(int port, char *ptr, int len)
-      ^~~~~~~~
-../Core/Src/main.c:117:5: note: previous implicit declaration of 'swvPrint' was here
-     swvPrint(0, "1", 2);
-     ^~~~~~~~
-arm-none-eabi-gcc -o "NUCLEO_ADC_KF.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUCLEO_ADC_KF\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_ADC_KF.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: NUCLEO_ADC_KF.elf
- 
-arm-none-eabi-objdump -h -S  NUCLEO_ADC_KF.elf  > "NUCLEO_ADC_KF.list"
-arm-none-eabi-objcopy  -O binary  NUCLEO_ADC_KF.elf  "NUCLEO_ADC_KF.bin"
 arm-none-eabi-size   NUCLEO_ADC_KF.elf 
    text	   data	    bss	    dec	    hex	filename
   18644	    128	   2568	  21340	   535c	NUCLEO_ADC_KF.elf
 Finished building: default.size.stdout
  
-Finished building: NUCLEO_ADC_KF.bin
- 
-Finished building: NUCLEO_ADC_KF.list
- 
 
-18:32:12 Build Finished. 0 errors, 2 warnings. (took 1s.297ms)
+15:41:11 Build Finished. 0 errors, 0 warnings. (took 862ms)
 

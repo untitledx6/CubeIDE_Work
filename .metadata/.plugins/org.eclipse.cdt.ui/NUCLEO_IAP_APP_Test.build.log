@@ -1,0 +1,20 @@
+14:39:37 **** Incremental Build of configuration Debug for project NUCLEO_IAP_APP_Test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "NUCLEO_IAP_APP_Test.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUCLEO_IAP_APP_Test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_IAP_APP_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUCLEO_IAP_APP_Test.elf
+ 
+arm-none-eabi-objdump -h -S  NUCLEO_IAP_APP_Test.elf  > "NUCLEO_IAP_APP_Test.list"
+arm-none-eabi-objcopy  -O binary  NUCLEO_IAP_APP_Test.elf  "NUCLEO_IAP_APP_Test.bin"
+arm-none-eabi-size   NUCLEO_IAP_APP_Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9192	    120	   1712	  11024	   2b10	NUCLEO_IAP_APP_Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUCLEO_IAP_APP_Test.bin
+ 
+Finished building: NUCLEO_IAP_APP_Test.list
+ 
+
+14:39:38 Build Finished. 0 errors, 0 warnings. (took 1s.239ms)
+

@@ -100,7 +100,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  printf("fsdffsf\r\n");
+	  //printf("fsdffsf\r\n");
 	  for(uint8_t i = 0; i < 10; i++) {
 		  HAL_GPIO_WritePin(SPI2_CS_GPIO_Port, SPI2_CS_Pin, RESET);
 		  HAL_SPI_Transmit(&hspi2, Spi_Test_String + i, 1, 0xff);

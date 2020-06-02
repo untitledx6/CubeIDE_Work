@@ -114,7 +114,7 @@ int main(void)
 
 		  ADC_Kalman_Value = KalmanFilter(ADC_BUF_Value, 100);
 
-		  swvPrint(0, "1", 2);
+		  swvPrint(0, "1\n", 2);
 		  HAL_Delay(1);
 		  ADC_Trans_Flag = 0;
 	  }

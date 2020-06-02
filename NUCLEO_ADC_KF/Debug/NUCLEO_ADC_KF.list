@@ -1788,7 +1788,7 @@ int main(void)
  8001266:	4b0d      	ldr	r3, [pc, #52]	; (800129c <main+0xb4>)
  8001268:	601a      	str	r2, [r3, #0]
 
-		  swvPrint(0, "1", 2);
+		  swvPrint(0, "1\n", 2);
  800126a:	2202      	movs	r2, #2
  800126c:	490c      	ldr	r1, [pc, #48]	; (80012a0 <main+0xb8>)
  800126e:	2000      	movs	r0, #0

@@ -90,8 +90,10 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_TIM1_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim1);
+  printf("fafda\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,7 +101,7 @@ int main(void)
   while (1)
   {
 
-	 if(time == 1000) {
+	 if(time == 2000) {
 	  		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 	  		  time = 0;
 	  	  }
@@ -109,7 +111,6 @@ int main(void)
   }
   /* USER CODE END 3 */
 }
-
 
 /**
   * @brief System Clock Configuration

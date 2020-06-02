@@ -1,0 +1,7 @@
+main.c:77:5:main	8	static
+main.c:209:6:SystemClock_Config	72	static
+main.c:246:6:go2APP	24	static,ignoring_inline_asm
+main.c:269:6:HAL_UART_RxCpltCallback	16	static
+main.c:295:6:Data_Manage	24	static
+main.c:324:6:Download_App	24	static
+main.c:397:6:Error_Handler	4	static

@@ -1,10 +1,20 @@
-14:03:38 **** Incremental Build of configuration Debug for project Demo1_GREEN_lED ****
+01:26:21 **** Incremental Build of configuration Debug for project Demo1_GREEN_lED ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Demo1_GREEN_lED.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Demo\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo1_GREEN_lED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Demo1_GREEN_lED.elf
+ 
+arm-none-eabi-objdump -h -S  Demo1_GREEN_lED.elf  > "Demo1_GREEN_lED.list"
+arm-none-eabi-objcopy  -O binary  Demo1_GREEN_lED.elf  "Demo1_GREEN_lED.bin"
 arm-none-eabi-size   Demo1_GREEN_lED.elf 
    text	   data	    bss	    dec	    hex	filename
-   5728	     20	   1636	   7384	   1cd8	Demo1_GREEN_lED.elf
+   5868	     20	   1636	   7524	   1d64	Demo1_GREEN_lED.elf
 Finished building: default.size.stdout
  
+Finished building: Demo1_GREEN_lED.bin
+Finished building: Demo1_GREEN_lED.list
+ 
+ 
 
-14:03:39 Build Finished. 0 errors, 0 warnings. (took 566ms)
+01:26:22 Build Finished. 0 errors, 0 warnings. (took 1s.64ms)
 

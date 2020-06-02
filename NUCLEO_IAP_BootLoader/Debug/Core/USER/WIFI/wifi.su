@@ -1,0 +1,7 @@
+wifi.c:3:6:Server_Init	8	static
+wifi.c:17:6:Client_Init	8	static
+wifi.c:35:6:Client_SentTo_Server	16	static
+wifi.c:41:6:Server_SentTo_Client	16	static
+wifi.c:49:10:Strlen	24	static
+wifi.c:56:7:Strcpy	24	static
+wifi.c:63:9:Strcmp	24	static

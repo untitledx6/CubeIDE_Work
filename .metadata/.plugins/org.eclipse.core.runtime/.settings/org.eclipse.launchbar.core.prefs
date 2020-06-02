@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADC_KF Debug
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_IAP_BootLoader Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001led\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Debug\ OLED_I2C/activeLaunchTarget=null\:---
@@ -17,10 +17,12 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Demo_Base_PWM\ Debug/activeLaun
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Demo_Base_PWM/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_DAC\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_DAC\ Debug/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_LED\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_LED\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_LED\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_SPI_slave\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_SPI_slave\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_compPWM\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_compPWM\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADC\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADC\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADC_KF\ Debug/activeLaunchMode=debug
@@ -29,6 +31,10 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_EXIT\ Debug/activeLaunch
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_EXIT\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_FreeRTOS_LedAndOled\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_FreeRTOS_LedAndOled\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_IAP_APP_Test\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_IAP_APP_Test\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_IAP_BootLoader\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_IAP_BootLoader\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_Oled\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_Oled\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_SPI_master\ Debug/activeLaunchMode=run

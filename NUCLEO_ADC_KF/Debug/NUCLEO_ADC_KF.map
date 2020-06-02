@@ -3722,8 +3722,8 @@ LOAD d:/stm32cubeide/stm32cubeide_1.3.0/stm32cubeide/plugins/com.st.stm32cube.id
 .rodata         0x00000000080047f8       0xe0
                 0x00000000080047f8                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x00000000080047f8        0x2 Core/Src/main.o
- *fill*         0x00000000080047fa        0x2 
+ .rodata        0x00000000080047f8        0x3 Core/Src/main.o
+ *fill*         0x00000000080047fb        0x1 
  .rodata        0x00000000080047fc       0x12 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
  *(.rodata*)
  *fill*         0x000000000800480e        0x2 

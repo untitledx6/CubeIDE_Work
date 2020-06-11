@@ -1,0 +1,18 @@
+
+uint32_t ADC_Value[100];
+uint8_t Dma_DataDeal_Flag = 1;
+uint32_t ADC_Value_Buffer[100];
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+
+	if(Dma_DataDeal_Flag == 1) {
+		Dma_DataDeal_Flag = 0;
+
+		for(uint8_t i = 0; i < 100; i++) {
+			ADC_Value_Buffer[i] = ADC_Value[i];
+		}
+
+		Dma_DataDeal_Flag = 1;
+	}
+
+}

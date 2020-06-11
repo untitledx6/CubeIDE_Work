@@ -1,5 +1,7 @@
-main.c:67:5:main	8	static
-main.c:113:6:SystemClock_Config	88	static
-main.c:152:6:System_Init	8	static
-main.c:163:6:Tcp_DataDeal	24	static
-main.c:179:6:Error_Handler	4	static
+main.c:81:5:main	16	static
+main.c:144:6:SystemClock_Config	88	static
+main.c:183:6:Set_CompareValue	16	static
+main.c:195:6:Boost_Control	16	static
+main.c:209:6:System_Init	8	static
+main.c:233:6:Tcp_DataDeal	80	static
+main.c:245:6:Error_Handler	4	static

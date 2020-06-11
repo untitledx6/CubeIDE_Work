@@ -1,0 +1,8 @@
+#include "main.h"
+
+#define Sample_Num 100 //每一个通道的采样数
+#define Channel_Num  2//通道数量， 一个为电压量，一个为电流量。
+
+extern uint32_t ADC_Value[100];
+extern uint8_t Dma_DataDeal_Flag;
+extern uint32_t ADC_Value_Buffer[100];

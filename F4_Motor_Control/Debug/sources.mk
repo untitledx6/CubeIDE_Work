@@ -19,6 +19,7 @@ OBJCOPY_BIN :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
+Core/USER/ADC \
 Core/USER/InputCap \
 Core/USER/PID \
 Core/USER/WIFI \

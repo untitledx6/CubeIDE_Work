@@ -1,0 +1,19 @@
+#include "AdcDma.h"
+
+uint32_t ADC_Value[Sample_Num][Channel_Num];
+uint8_t Dma_DataDeal_Flag = 1;
+float ADC_Value_Buffer[Sample_Num][Channel_Num];
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+
+	if(Dma_DataDeal_Flag == 1) {
+		Dma_DataDeal_Flag = 0;
+
+		for(uint8_t i = 0; i < 100; i++) {
+			ADC_Value_Buffer[i] = ADC_Value[i];
+		}
+
+		Dma_DataDeal_Flag = 1;
+	}
+
+}

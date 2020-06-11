@@ -57,3 +57,51 @@ void Set_PID_Parameter(float KP,float KI,float KD)
     ki = KI;
     kd = KD;
 }
+
+
+float kp1,ki1,kd1;
+float Iterm1 = 0;
+float lastInput1 = 0;
+float temp1,dInput1;
+float error1[20];
+
+
+float PID_Calc1(float Input,float setpoint)
+{
+	static uint16_t left1 = 0;
+	static uint16_t right1 = 0;
+	static uint16_t flag1 = 0;
+
+	error1[right1] = setpoint - Input;
+	dInput1 = Input - lastInput1;
+	Iterm1 += ki1*error1[right1];
+	if(Iterm1 > ITERM_MAX)  Iterm1 = ITERM_MAX;
+	else if(Iterm1 < ITERM_MIN)  Iterm1 = ITERM_MIN;
+
+	temp1 = kp1*error1[right1] + Iterm1 - kd1*dInput1;
+	if(temp1 > OUTMAX)  temp1 = OUTMAX;
+	else if(temp1 < OUTMIN)  temp1 = OUTMIN;
+	lastInput1 = Input;
+
+	right1++;
+	if(right1 >= 20)
+	{
+		flag1 = 1;
+		right1 = 0;
+	}
+	if(flag1)
+	{
+		Iterm1 -= ki1*error1[left1++];
+		if(left1 >= 20)
+			left1 = 0;
+	}
+
+	return temp1;
+}
+
+void Set_PID_Parameter1(float KP,float KI,float KD)
+{
+    kp1 = KP;
+    ki1 = KI;
+    kd1 = KD;
+}

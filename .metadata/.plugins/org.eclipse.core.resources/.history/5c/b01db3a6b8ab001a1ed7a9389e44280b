@@ -1,0 +1,22 @@
+#include "AdcDma.h"
+
+uint32_t ADC_Value[Sample_Num][Channel_Num];
+uint8_t Dma_DataDeal_Flag = 1;
+float ADC_Value_Buffer[Sample_Num][Channel_Num];
+float ADC_ValueAverage[Channel_Num];
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+
+	if(Dma_DataDeal_Flag == 1) {
+		Dma_DataDeal_Flag = 0;
+
+		for(int x = 0; x < Sample_Num; x++) {
+			for(int y = 0; y < Channel_Num; y++) {
+				ADC_Value_Buffer[x][y] = (float)ADC_Value[x][y] / 4096 * 3.3;
+			}
+		}
+
+		Dma_DataDeal_Flag = 1;
+	}
+
+}

@@ -1,20 +1,10 @@
-12:11:40 **** Incremental Build of configuration Debug for project Demo3_Base_PWM ****
+13:29:30 **** Incremental Build of configuration Debug for project Demo3_Base_PWM ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Demo3_Base_PWM.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\Demo_Base_PWM\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Demo3_Base_PWM.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Demo3_Base_PWM.elf
- 
-arm-none-eabi-objdump -h -S  Demo3_Base_PWM.elf  > "Demo3_Base_PWM.list"
-arm-none-eabi-objcopy  -O binary  Demo3_Base_PWM.elf  "Demo3_Base_PWM.bin"
 arm-none-eabi-size   Demo3_Base_PWM.elf 
    text	   data	    bss	    dec	    hex	filename
    8932	     24	   1696	  10652	   299c	Demo3_Base_PWM.elf
 Finished building: default.size.stdout
  
-Finished building: Demo3_Base_PWM.bin
- 
-Finished building: Demo3_Base_PWM.list
- 
 
-12:11:42 Build Finished. 0 errors, 0 warnings. (took 1s.68ms)
+13:29:30 Build Finished. 0 errors, 0 warnings. (took 614ms)
 

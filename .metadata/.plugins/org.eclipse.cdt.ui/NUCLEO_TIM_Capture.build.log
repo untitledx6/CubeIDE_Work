@@ -1,0 +1,29 @@
+15:38:43 **** Incremental Build of configuration Debug for project NUCLEO_TIM_Capture ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:107:21: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Cycle = %d  Width = %d\r\n", Cycle, Width);
+                    ~^
+                    %ld
+../Core/Src/main.c:107:33: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    printf("Cycle = %d  Width = %d\r\n", Cycle, Width);
+                                ~^
+                                %ld
+arm-none-eabi-gcc -o "NUCLEO_TIM_Capture.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUCLEO_TIM_Capture\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_TIM_Capture.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUCLEO_TIM_Capture.elf
+ 
+arm-none-eabi-objdump -h -S  NUCLEO_TIM_Capture.elf  > "NUCLEO_TIM_Capture.list"
+arm-none-eabi-objcopy  -O binary  NUCLEO_TIM_Capture.elf  "NUCLEO_TIM_Capture.bin"
+arm-none-eabi-size   NUCLEO_TIM_Capture.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14516	    120	   1792	  16428	   402c	NUCLEO_TIM_Capture.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUCLEO_TIM_Capture.bin
+ 
+Finished building: NUCLEO_TIM_Capture.list
+ 
+
+15:38:44 Build Finished. 0 errors, 2 warnings. (took 1s.615ms)
+

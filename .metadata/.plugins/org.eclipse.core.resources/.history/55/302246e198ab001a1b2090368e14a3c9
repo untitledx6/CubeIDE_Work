@@ -1,0 +1,4 @@
+
+
+extern uint32_t Cycle;
+extern uint32_t Width;

@@ -1,9 +1,0 @@
-#include "flash.h"
-
-
-uint8_t Flash_Write_Page(uint32_t *Flash_Address, uint32_t *Date_Address) {
-	HAL_FLASH_Unlock();
-
-	HAL_FLASH_lock();
-
-}

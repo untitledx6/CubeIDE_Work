@@ -1,0 +1,27 @@
+12:54:28 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/USER/WIFI/wifi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/USER/WIFI/wifi.d" -MT"Core/USER/WIFI/wifi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/USER/WIFI/wifi.o"
+../Core/USER/WIFI/wifi.c: In function 'Tcp_DataAccept':
+../Core/USER/WIFI/wifi.c:96:40: warning: pointer targets in passing argument 2 of 'Strcmp' differ in signedness [-Wpointer-sign]
+         if(Strcmp(Wifi_Command_Buffer, "+IPD") == 1) {
+                                        ^~~~~~
+../Core/USER/WIFI/wifi.c:48:9: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ uint8_t Strcmp(uint8_t *s1, uint8_t *s2) {
+         ^~~~~~
+arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F4_Motor_Control.elf
+ 
+arm-none-eabi-objdump -h -S  F4_Motor_Control.elf  > "F4_Motor_Control.list"
+arm-none-eabi-objcopy  -O binary  F4_Motor_Control.elf  "F4_Motor_Control.bin"
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19992	    120	   1936	  22048	   5620	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+Finished building: F4_Motor_Control.bin
+ 
+Finished building: F4_Motor_Control.list
+ 
+
+12:54:29 Build Finished. 0 errors, 1 warnings. (took 1s.384ms)
+

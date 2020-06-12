@@ -67,7 +67,7 @@ void SystemClock_Config(void);
 void System_Init(void); // system init
 void Set_CompareValue(uint8_t CompareValue);
 void Boost_Control(void);
-uint8_t StateJudgment(float Speed);
+void StateJudgment(float Speed);
 
 /* USER CODE END PFP */
 
@@ -195,9 +195,53 @@ void Set_CompareValue(uint8_t CompareValue) {
 
 uint8_t BufferSize = 10;
 float Speed_Buffer[BufferSize];
-uint8_t StateJudgment(float Speed) {
-
-
+uint8_t BufferIndex = 0;
+uint8_t SystemState = 0;
+void StateJudgment(float Speed) {
+	Speed_Buffer[BufferIndex] = Speed;
+	BufferIndex++;
+	if(BufferIndex == BufferSize) {
+		BufferIndex = 0;
+	}
+	if(SystemState == 0) { //初始状态
+		if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+			return;
+		}
+		for(uint8_t i = 0; i < BufferSize; i++) {
+			if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+				return;
+			}
+		}
+		SystemState = 1; //速度恒定  进入匀速模式
+		return;
+	}
+	if(SystemState == 1) { //匀速
+		if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+			SystemState = 2; //匀速模式被打破
+			return;
+		}
+	}
+	if(SystemState == 2) { //匀速后失速
+		if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+			return;
+		}
+		for(uint8_t i = 0; i < BufferSize; i++) {
+			if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+				return;
+			}
+		}
+		SystemState = 3; //失速后 又恢复为匀速
+		return;
+	}
+	if(SystemState == 3) { //失速后恢复
+		if(Up_Flag == 1 && ADC_ValueAverage[1] > 1.5) {
+			Beep();  //上升时失速
+		}
+		if(Up_Flag == 0 && ADC_ValueAverage[1] < 0.5) {
+			Beep(); //下降时失速
+		}
+		SystemState = 1; //恢复匀速模式
+	}
 }
 
 

@@ -48,6 +48,8 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI\ Debug/activeLaunch
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI_Client\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI_Client\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUClEO_Motor_Observ\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUClEO_Motor_Observ\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Tes\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Tes\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Test\ Debug/activeLaunchMode=run

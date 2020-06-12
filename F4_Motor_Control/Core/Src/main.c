@@ -117,6 +117,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  /*
 	  float Pid_Output = PID_Calc((float)2000 / Cycle, Target_Speed); //进行Pid运算
 	  Pwm_Motor_CompareValue += (uint16_t) Pid_Output; //pwm比较值加上pid运算结果，实现闭环控制
 	  if(Pwm_Motor_CompareValue >= 100) {//如果占空比大于1则，回调为1/2
@@ -127,12 +128,11 @@ int main(void)
 	  }
 	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //进行占空比调整
 
-
-
+	  StateJudgment(float Speed);
 	  Boost_Control();
+	  */
 	  Update_Data();
-	  Tcp_DataDeal();
-	 // Tcp_DataAccept();
+	  Tcp_DataAccept();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -193,10 +193,12 @@ void Set_CompareValue(uint8_t CompareValue) {
 	}
 }
 
-uint8_t BufferSize = 10;
-float Speed_Buffer[BufferSize];
+#define BufferSize 10
+float Speed_Buffer[BufferSize]; //速度缓冲区
+float MaxRange = 1.2,MinRange = 0.8; //失速范围
 uint8_t BufferIndex = 0;
-uint8_t SystemState = 0;
+uint8_t SystemState = 0; //状态1为匀速 2为失速 3为失速恢复
+float StableI = 0; //匀速电流
 void StateJudgment(float Speed) {
 	Speed_Buffer[BufferIndex] = Speed;
 	BufferIndex++;
@@ -204,29 +206,30 @@ void StateJudgment(float Speed) {
 		BufferIndex = 0;
 	}
 	if(SystemState == 0) { //初始状态
-		if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 			return;
 		}
 		for(uint8_t i = 0; i < BufferSize; i++) {
-			if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+			if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 				return;
 			}
 		}
 		SystemState = 1; //速度恒定  进入匀速模式
+		StableI = ADC_ValueAverage[1]; //1kg时的电流
 		return;
 	}
 	if(SystemState == 1) { //匀速
-		if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 			SystemState = 2; //匀速模式被打破
 			return;
 		}
 	}
 	if(SystemState == 2) { //匀速后失速
-		if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 			return;
 		}
 		for(uint8_t i = 0; i < BufferSize; i++) {
-			if(Speed < (Target_Speed - 0.2) || (Speed > Target_Speed + 0.2)) {
+			if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 				return;
 			}
 		}
@@ -234,16 +237,15 @@ void StateJudgment(float Speed) {
 		return;
 	}
 	if(SystemState == 3) { //失速后恢复
-		if(Up_Flag == 1 && ADC_ValueAverage[1] > 1.5) {
+		if(Up_Flag == 1 && ADC_ValueAverage[1] > 1.5 * StableI) {
 			Beep();  //上升时失速
 		}
-		if(Up_Flag == 0 && ADC_ValueAverage[1] < 0.5) {
+		if(Up_Flag == 0 && ADC_ValueAverage[1] < 0.5 * StableI) {
 			Beep(); //下降时失速
 		}
 		SystemState = 1; //恢复匀速模式
 	}
 }
-
 
 
 void Boost_Control(void) {

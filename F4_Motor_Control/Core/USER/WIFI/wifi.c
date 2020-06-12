@@ -67,6 +67,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 				//if(Rx_Buffer_Size >= 5) {
 					Rx_Line_Flag = 1;
 				//}
+
+				if(Rx_Buffer_Size == 1) {
+					Rx_Line_Flag = 0;
+				}
+
 				if(Rx_Buffer_Size == 0){
 					Rx_Line_Flag = 0;
 				}

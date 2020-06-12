@@ -1,6 +1,691 @@
-22:52:45 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+17:56:11 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+17:56:14 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+17:57:06 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+17:57:45 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+17:58:04 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+17:58:21 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+17:58:48 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+17:59:08 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31764	   2852	   2084	  36700	   8f5c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:03:24 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/USER/OLED/oled.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/USER/OLED/oled.d" -MT"Core/USER/OLED/oled.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/USER/OLED/oled.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/USER/OLED/oled.c:4:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oledfont.h:10:1: warning: missing braces around initializer [-Wmissing-braces]
+ {
+ ^
+ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,// sp
+ {                                 }
+ 0x00, 0x00, 0x00, 0x2f, 0x00, 0x00,// !
+ {                                 }
+ 0x00, 0x00, 0x07, 0x00, 0x07, 0x00,// "
+ {                                 }
+ 0x00, 0x14, 0x7f, 0x14, 0x7f, 0x14,// #
+ {                                 }
+ 0x00, 0x24, 0x2a, 0x7f, 0x2a, 0x12,// $
+ {                                 }
+ 0x00, 0x62, 0x64, 0x08, 0x13, 0x23,// %
+ {                                 }
+ 0x00, 0x36, 0x49, 0x55, 0x22, 0x50,// &
+ {                                 }
+ 0x00, 0x00, 0x05, 0x03, 0x00, 0x00,// '
+ {                                 }
+ 0x00, 0x00, 0x1c, 0x22, 0x41, 0x00,// (
+ {                                 }
+ 0x00, 0x00, 0x41, 0x22, 0x1c, 0x00,// )
+ {                                 }
+ 0x00, 0x14, 0x08, 0x3E, 0x08, 0x14,// *
+ {                                 }
+ 0x00, 0x08, 0x08, 0x3E, 0x08, 0x08,// +
+ {                                 }
+ 0x00, 0x00, 0x00, 0xA0, 0x60, 0x00,// ,
+ {                                 }
+ 0x00, 0x08, 0x08, 0x08, 0x08, 0x08,// -
+ {                                 }
+ 0x00, 0x00, 0x60, 0x60, 0x00, 0x00,// .
+ {                                 }
+ 0x00, 0x20, 0x10, 0x08, 0x04, 0x02,// /
+ {                                 }
+ 0x00, 0x3E, 0x51, 0x49, 0x45, 0x3E,// 0
+ {                                 }
+ 0x00, 0x00, 0x42, 0x7F, 0x40, 0x00,// 1
+ {                                 }
+ 0x00, 0x42, 0x61, 0x51, 0x49, 0x46,// 2
+ {                                 }
+ 0x00, 0x21, 0x41, 0x45, 0x4B, 0x31,// 3
+ {                                 }
+ 0x00, 0x18, 0x14, 0x12, 0x7F, 0x10,// 4
+ {                                 }
+ 0x00, 0x27, 0x45, 0x45, 0x45, 0x39,// 5
+ {                                 }
+ 0x00, 0x3C, 0x4A, 0x49, 0x49, 0x30,// 6
+ {                                 }
+ 0x00, 0x01, 0x71, 0x09, 0x05, 0x03,// 7
+ {                                 }
+ 0x00, 0x36, 0x49, 0x49, 0x49, 0x36,// 8
+ {                                 }
+ 0x00, 0x06, 0x49, 0x49, 0x29, 0x1E,// 9
+ {                                 }
+ 0x00, 0x00, 0x36, 0x36, 0x00, 0x00,// :
+ {                                 }
+ 0x00, 0x00, 0x56, 0x36, 0x00, 0x00,// ;
+ {                                 }
+ 0x00, 0x08, 0x14, 0x22, 0x41, 0x00,// <
+ {                                 }
+ 0x00, 0x14, 0x14, 0x14, 0x14, 0x14,// =
+ {                                 }
+ 0x00, 0x00, 0x41, 0x22, 0x14, 0x08,// >
+ {                                 }
+ 0x00, 0x02, 0x01, 0x51, 0x09, 0x06,// ?
+ {                                 }
+ 0x00, 0x32, 0x49, 0x59, 0x51, 0x3E,// @
+ {                                 }
+ 0x00, 0x7C, 0x12, 0x11, 0x12, 0x7C,// A
+ {                                 }
+ 0x00, 0x7F, 0x49, 0x49, 0x49, 0x36,// B
+ {                                 }
+ 0x00, 0x3E, 0x41, 0x41, 0x41, 0x22,// C
+ {                                 }
+ 0x00, 0x7F, 0x41, 0x41, 0x22, 0x1C,// D
+ {                                 }
+ 0x00, 0x7F, 0x49, 0x49, 0x49, 0x41,// E
+ {                                 }
+ 0x00, 0x7F, 0x09, 0x09, 0x09, 0x01,// F
+ {                                 }
+ 0x00, 0x3E, 0x41, 0x49, 0x49, 0x7A,// G
+ {                                 }
+ 0x00, 0x7F, 0x08, 0x08, 0x08, 0x7F,// H
+ {                                 }
+ 0x00, 0x00, 0x41, 0x7F, 0x41, 0x00,// I
+ {                                 }
+ 0x00, 0x20, 0x40, 0x41, 0x3F, 0x01,// J
+ {                                 }
+ 0x00, 0x7F, 0x08, 0x14, 0x22, 0x41,// K
+ {                                 }
+ 0x00, 0x7F, 0x40, 0x40, 0x40, 0x40,// L
+ {                                 }
+ 0x00, 0x7F, 0x02, 0x0C, 0x02, 0x7F,// M
+ {                                 }
+ 0x00, 0x7F, 0x04, 0x08, 0x10, 0x7F,// N
+ {                                 }
+ 0x00, 0x3E, 0x41, 0x41, 0x41, 0x3E,// O
+ {                                 }
+ 0x00, 0x7F, 0x09, 0x09, 0x09, 0x06,// P
+ {                                 }
+ 0x00, 0x3E, 0x41, 0x51, 0x21, 0x5E,// Q
+ {                                 }
+ 0x00, 0x7F, 0x09, 0x19, 0x29, 0x46,// R
+ {                                 }
+ 0x00, 0x46, 0x49, 0x49, 0x49, 0x31,// S
+ {                                 }
+ 0x00, 0x01, 0x01, 0x7F, 0x01, 0x01,// T
+ {                                 }
+ 0x00, 0x3F, 0x40, 0x40, 0x40, 0x3F,// U
+ {                                 }
+ 0x00, 0x1F, 0x20, 0x40, 0x20, 0x1F,// V
+ {                                 }
+ 0x00, 0x3F, 0x40, 0x38, 0x40, 0x3F,// W
+ {                                 }
+ 0x00, 0x63, 0x14, 0x08, 0x14, 0x63,// X
+ {                                 }
+ 0x00, 0x07, 0x08, 0x70, 0x08, 0x07,// Y
+ {                                 }
+ 0x00, 0x61, 0x51, 0x49, 0x45, 0x43,// Z
+ {                                 }
+ 0x00, 0x00, 0x7F, 0x41, 0x41, 0x00,// [
+ {                                 }
+ 0x00, 0x55, 0x2A, 0x55, 0x2A, 0x55,// 55
+ {                                 }
+ 0x00, 0x00, 0x41, 0x41, 0x7F, 0x00,// ]
+ {                                 }
+ 0x00, 0x04, 0x02, 0x01, 0x02, 0x04,// ^
+ {                                 }
+ 0x00, 0x40, 0x40, 0x40, 0x40, 0x40,// _
+ {                                 }
+ 0x00, 0x00, 0x01, 0x02, 0x04, 0x00,// '
+ {                                 }
+ 0x00, 0x20, 0x54, 0x54, 0x54, 0x78,// a
+ {                                 }
+ 0x00, 0x7F, 0x48, 0x44, 0x44, 0x38,// b
+ {                                 }
+ 0x00, 0x38, 0x44, 0x44, 0x44, 0x20,// c
+ {                                 }
+ 0x00, 0x38, 0x44, 0x44, 0x48, 0x7F,// d
+ {                                 }
+ 0x00, 0x38, 0x54, 0x54, 0x54, 0x18,// e
+ {                                 }
+ 0x00, 0x08, 0x7E, 0x09, 0x01, 0x02,// f
+ {                                 }
+ 0x00, 0x18, 0xA4, 0xA4, 0xA4, 0x7C,// g
+ {                                 }
+ 0x00, 0x7F, 0x08, 0x04, 0x04, 0x78,// h
+ {                                 }
+ 0x00, 0x00, 0x44, 0x7D, 0x40, 0x00,// i
+ {                                 }
+ 0x00, 0x40, 0x80, 0x84, 0x7D, 0x00,// j
+ {                                 }
+ 0x00, 0x7F, 0x10, 0x28, 0x44, 0x00,// k
+ {                                 }
+ 0x00, 0x00, 0x41, 0x7F, 0x40, 0x00,// l
+ {                                 }
+ 0x00, 0x7C, 0x04, 0x18, 0x04, 0x78,// m
+ {                                 }
+ 0x00, 0x7C, 0x08, 0x04, 0x04, 0x78,// n
+ {                                 }
+ 0x00, 0x38, 0x44, 0x44, 0x44, 0x38,// o
+ {                                 }
+ 0x00, 0xFC, 0x24, 0x24, 0x24, 0x18,// p
+ {                                 }
+ 0x00, 0x18, 0x24, 0x24, 0x18, 0xFC,// q
+ {                                 }
+ 0x00, 0x7C, 0x08, 0x04, 0x04, 0x08,// r
+ {                                 }
+ 0x00, 0x48, 0x54, 0x54, 0x54, 0x20,// s
+ {                                 }
+ 0x00, 0x04, 0x3F, 0x44, 0x40, 0x20,// t
+ {                                 }
+ 0x00, 0x3C, 0x40, 0x40, 0x20, 0x7C,// u
+ {                                 }
+ 0x00, 0x1C, 0x20, 0x40, 0x20, 0x1C,// v
+ {                                 }
+ 0x00, 0x3C, 0x40, 0x30, 0x40, 0x3C,// w
+ {                                 }
+ 0x00, 0x44, 0x28, 0x10, 0x28, 0x44,// x
+ {                                 }
+ 0x00, 0x1C, 0xA0, 0xA0, 0xA0, 0x7C,// y
+ {                                 }
+ 0x00, 0x44, 0x64, 0x54, 0x4C, 0x44,// z
+ {                                 }
+ 0x14, 0x14, 0x14, 0x14, 0x14, 0x14,// horiz lines
+ {
+ };
+ }
+../Core/USER/OLED/oled.c: In function 'Write_IIC_Cmddat':
+../Core/USER/OLED/oled.c:12:20: warning: variable 'i' set but not used [-Wunused-but-set-variable]
+  HAL_StatusTypeDef i = HAL_ERROR;
+                    ^
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31788	   3108	   2084	  36980	   9074	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:04:24 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31788	   3108	   2084	  36980	   9074	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:05:29 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31788	   3108	   2084	  36980	   9074	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:10:36 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34852	   3108	   2084	  40044	   9c6c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:12:36 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34868	   3108	   2084	  40060	   9c7c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:13:30 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34868	   3108	   2084	  40060	   9c7c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:15:07 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34724	   2084	   2084	  38892	   97ec	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:16:07 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34892	   3108	   2084	  40084	   9c94	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:20:11 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34124	   3108	   2084	  39316	   9994	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:20:48 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34892	   3108	   2084	  40084	   9c94	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:21:19 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34852	   3108	   2084	  40044	   9c6c	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:21:57 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34140	   3108	   2084	  39332	   99a4	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:43:36 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/USER/WIFI/wifi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/USER/WIFI/wifi.d" -MT"Core/USER/WIFI/wifi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/USER/WIFI/wifi.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/USER/WIFI/wifi.c: In function 'Tcp_DataAccept':
+../Core/USER/WIFI/wifi.c:102:40: warning: pointer targets in passing argument 2 of 'Strcmp' differ in signedness [-Wpointer-sign]
+         if(Strcmp(Wifi_Command_Buffer, "+IPD") == 1) {
+                                        ^~~~~~
+../Core/USER/WIFI/wifi.c:48:9: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ uint8_t Strcmp(uint8_t *s1, uint8_t *s2) {
+         ^~~~~~
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34892	   3108	   2084	  40084	   9c94	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:44:07 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34908	   3108	   2084	  40100	   9ca4	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:45:49 **** Incremental Build of configuration Debug for project NUClEO_Motor_Observ ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:31:0:
+D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:213:3: warning: "/*" within comment [-Wcomment]
+   /* (128 X 64 )*/
+    
+arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUClEO_Motor_Observ.elf
+ 
+arm-none-eabi-objdump -h -S  NUClEO_Motor_Observ.elf  > "NUClEO_Motor_Observ.list"
+arm-none-eabi-objcopy  -O binary  NUClEO_Motor_Observ.elf  "NUClEO_Motor_Observ.bin"
+arm-none-eabi-size   NUClEO_Motor_Observ.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34908	   3108	   2084	  40100	   9ca4	NUClEO_Motor_Observ.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUClEO_Motor_Observ.bin
+ 
+Finished building: NUClEO_Motor_Observ.list
+ 
+18:53:34 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/USER/WIFI/wifi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/USER/WIFI/wifi.d" -MT"Core/USER/WIFI/wifi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/USER/WIFI/wifi.o"
+arm-none-eabi-gcc "../Core/USER/InputCap/inputcap.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/USER/InputCap/inputcap.d" -MT"Core/USER/InputCap/inputcap.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/USER/InputCap/inputcap.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/USER/WIFI/wifi.c: In function 'Tcp_DataAccept':
+../Core/USER/WIFI/wifi.c:102:40: warning: pointer targets in passing argument 2 of 'Strcmp' differ in signedness [-Wpointer-sign]
+         if(Strcmp(Wifi_Command_Buffer, "+IPD") == 1) {
+                                        ^~~~~~
+../Core/USER/WIFI/wifi.c:48:9: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ uint8_t Strcmp(uint8_t *s1, uint8_t *s2) {
+         ^~~~~~
+../Core/Src/main.c: In function 'StateJudgment':
+../Core/Src/main.c:242:4: warning: implicit declaration of function 'Beep' [-Wimplicit-function-declaration]
+    Beep();  //上升时失�?
+    ^~~~
 arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: F4_Motor_Control.elf
  
@@ -8,7 +693,42 @@ arm-none-eabi-objdump -h -S  F4_Motor_Control.elf  > "F4_Motor_Control.list"
 arm-none-eabi-objcopy  -O binary  F4_Motor_Control.elf  "F4_Motor_Control.bin"
 arm-none-eabi-size   F4_Motor_Control.elf 
    text	   data	    bss	    dec	    hex	filename
-  38336	    496	   3912	  42744	   a6f8	F4_Motor_Control.elf
+  37072	    484	   3876	  41432	   a1d8	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+Finished building: F4_Motor_Control.bin
+ 
+Finished building: F4_Motor_Control.list
+ 
+18:54:05 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  37072	    484	   3876	  41432	   a1d8	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+18:54:12 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  37072	    484	   3876	  41432	   a1d8	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+18:54:53 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StateJudgment':
+../Core/Src/main.c:242:4: warning: implicit declaration of function 'Beep' [-Wimplicit-function-declaration]
+    Beep();  //上升时失�?
+    ^~~~
+arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F4_Motor_Control.elf
+ 
+arm-none-eabi-objdump -h -S  F4_Motor_Control.elf  > "F4_Motor_Control.list"
+arm-none-eabi-objcopy  -O binary  F4_Motor_Control.elf  "F4_Motor_Control.bin"
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  37408	    484	   3980	  41872	   a390	F4_Motor_Control.elf
 Finished building: default.size.stdout
  
 Finished building: F4_Motor_Control.bin

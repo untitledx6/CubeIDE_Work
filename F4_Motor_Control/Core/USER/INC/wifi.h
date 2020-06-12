@@ -10,6 +10,7 @@ https://www.shaoguoji.cn/2017/01/15/ESP8266-usage/
 //教程
 /*
 开UART1 和其中断
+重定向printf
 首先 include"wifi.h"
 使用Server_Init();
   HAL_Delay(500);

@@ -1,6 +1,10 @@
-22:52:45 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+18:54:53 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StateJudgment':
+../Core/Src/main.c:242:4: warning: implicit declaration of function 'Beep' [-Wimplicit-function-declaration]
+    Beep();  //上升时失�?
+    ^~~~
 arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: F4_Motor_Control.elf
  
@@ -8,7 +12,7 @@ arm-none-eabi-objdump -h -S  F4_Motor_Control.elf  > "F4_Motor_Control.list"
 arm-none-eabi-objcopy  -O binary  F4_Motor_Control.elf  "F4_Motor_Control.bin"
 arm-none-eabi-size   F4_Motor_Control.elf 
    text	   data	    bss	    dec	    hex	filename
-  38336	    496	   3912	  42744	   a6f8	F4_Motor_Control.elf
+  37408	    484	   3980	  41872	   a390	F4_Motor_Control.elf
 Finished building: default.size.stdout
  
 Finished building: F4_Motor_Control.bin
@@ -16,5 +20,5 @@ Finished building: F4_Motor_Control.bin
 Finished building: F4_Motor_Control.list
  
 
-22:52:47 Build Finished. 0 errors, 0 warnings. (took 1s.528ms)
+18:54:54 Build Finished. 0 errors, 1 warnings. (took 1s.857ms)
 

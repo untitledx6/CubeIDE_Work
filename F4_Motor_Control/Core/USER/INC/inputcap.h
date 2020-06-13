@@ -11,3 +11,6 @@
 
 extern uint32_t Cycle;
 extern uint32_t Width;
+
+extern uint32_t Times;
+extern uint32_t Times_Buffer;

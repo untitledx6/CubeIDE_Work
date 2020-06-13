@@ -9,6 +9,8 @@ uint8_t  DownEdgeFlag = 0;
 
 uint32_t Cycle = 0, Width = 0;
 
+uint32_t Times = 0, Times_Buffer = 0;
+
 // 中断服务函数里面会自动调用这个回调函数  这个是定时器更新中断中处理的函数
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -35,6 +37,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         }
       //}
     }
+  }
+
+  if(htim->Instance == TIM3) {
+	  Times_Buffer = Times;
+	  Times = 0;
   }
 }
 

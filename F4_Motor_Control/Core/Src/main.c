@@ -56,8 +56,8 @@ uint8_t Up_Flag = 1;  // 1 up 0 down
 float Target_V = 15;
 float Target_Speed = 3;
 
-uint16_t Pwm_CH4_CompareValue = 0;
-uint16_t Pwm_Motor_CompareValue = 0;
+uint16_t Pwm_CH4_CompareValue = 80;
+uint16_t Pwm_Motor_CompareValue = 50;
 
 /* USER CODE END PV */
 
@@ -65,9 +65,10 @@ uint16_t Pwm_Motor_CompareValue = 0;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void System_Init(void); // system init
-void Set_CompareValue(uint8_t CompareValue);
-void Boost_Control(void);
+void Set_CompareValue(uint8_t CompareValue); //调占空比
+void Boost_Control(void);  //boost
 void StateJudgment(float Speed);
+void Change_Direction(void);  //换方�?
 
 /* USER CODE END PFP */
 
@@ -109,6 +110,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_ADC1_Init();
   MX_TIM1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   System_Init();
   /* USER CODE END 2 */
@@ -119,20 +121,23 @@ int main(void)
   {
 	  /*
 	  float Pid_Output = PID_Calc((float)2000 / Cycle, Target_Speed); //进行Pid运算
-	  Pwm_Motor_CompareValue += (uint16_t) Pid_Output; //pwm比较值加上pid运算结果，实现闭环控制
-	  if(Pwm_Motor_CompareValue >= 100) {//如果占空比大于1则，回调为1/2
+	  Pwm_Motor_CompareValue += (uint16_t) Pid_Output; //pwm比较值加上pid运算结果，实现闭环控�?
+	  if(Pwm_Motor_CompareValue >= 100) {//如果占空比大�?1则，回调�?1/2
 		  Pwm_Motor_CompareValue = 100/2;
 	  }
-	  if(Pwm_Motor_CompareValue <= 0) { //如果占空比小于0则调为0
+	  if(Pwm_Motor_CompareValue <= 0) { //如果占空比小�?0则调�?0
 		  Pwm_Motor_CompareValue = 0;
 	  }
-	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //进行占空比调整
+	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //进行占空比调�?
 
-	  StateJudgment(float Speed);
+	  StateJudgment((float)2000 / Cycle);
 	  Boost_Control();
 	  */
 	  Update_Data();
 	  Tcp_DataAccept();
+
+	//  Times_Buffer;
+	 // Times++;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -193,19 +198,25 @@ void Set_CompareValue(uint8_t CompareValue) {
 	}
 }
 
+void Change_Direction(void) {
+	if(Up_Flag == 1) {
+
+	}
+}
+
 #define BufferSize 10
-float Speed_Buffer[BufferSize]; //速度缓冲区
-float MaxRange = 1.2,MinRange = 0.8; //失速范围
+float Speed_Buffer[BufferSize]; //速度缓冲�?
+float MaxRange = 1.2,MinRange = 0.8; //失�?�范�?
 uint8_t BufferIndex = 0;
-uint8_t SystemState = 0; //状态1为匀速 2为失速 3为失速恢复
-float StableI = 0; //匀速电流
+uint8_t SystemState = 0; //状�??1为匀�? 2为失�? 3为失速恢�?
+float StableI = 0; //�?速电�?
 void StateJudgment(float Speed) {
 	Speed_Buffer[BufferIndex] = Speed;
 	BufferIndex++;
 	if(BufferIndex == BufferSize) {
 		BufferIndex = 0;
 	}
-	if(SystemState == 0) { //初始状态
+	if(SystemState == 0) { //初始状�??
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 			return;
 		}
@@ -214,17 +225,17 @@ void StateJudgment(float Speed) {
 				return;
 			}
 		}
-		SystemState = 1; //速度恒定  进入匀速模式
+		SystemState = 1; //速度恒定  进入�?速模�?
 		StableI = ADC_ValueAverage[1]; //1kg时的电流
 		return;
 	}
-	if(SystemState == 1) { //匀速
+	if(SystemState == 1) { //�?�?
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
-			SystemState = 2; //匀速模式被打破
+			SystemState = 2; //�?速模式被打破
 			return;
 		}
 	}
-	if(SystemState == 2) { //匀速后失速
+	if(SystemState == 2) { //�?速后失�??
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 			return;
 		}
@@ -233,31 +244,31 @@ void StateJudgment(float Speed) {
 				return;
 			}
 		}
-		SystemState = 3; //失速后 又恢复为匀速
+		SystemState = 3; //失�?�后 又恢复为�?�?
 		return;
 	}
-	if(SystemState == 3) { //失速后恢复
+	if(SystemState == 3) { //失�?�后恢复
 		if(Up_Flag == 1 && ADC_ValueAverage[1] > 1.5 * StableI) {
-			Beep();  //上升时失速
+			//Beep();  //上升时失�?
 		}
 		if(Up_Flag == 0 && ADC_ValueAverage[1] < 0.5 * StableI) {
-			Beep(); //下降时失速
+			//Beep(); //下降时失�?
 		}
-		SystemState = 1; //恢复匀速模式
+		SystemState = 1; //恢复�?速模�?
 	}
 }
 
 
 void Boost_Control(void) {
 	float Pid_Output = PID_Calc1(ADC_ValueAverage[0], Target_V); //进行Pid运算
-	Pwm_CH4_CompareValue += (uint16_t) Pid_Output; //pwm比较值加上pid运算结果，实现闭环控制
-	if(Pwm_CH4_CompareValue >= 100) {//如果占空比大于1则，回调为1/2
+	Pwm_CH4_CompareValue += (uint16_t) Pid_Output; //pwm比较值加上pid运算结果，实现闭环控�?
+	if(Pwm_CH4_CompareValue >= 100) {//如果占空比大�?1则，回调�?1/2
 		Pwm_CH4_CompareValue = 100/2;
 	}
-	if(Pwm_CH4_CompareValue <= 0) { //如果占空比小于0则调为0
+	if(Pwm_CH4_CompareValue <= 0) { //如果占空比小�?0则调�?0
 		Pwm_CH4_CompareValue = 0;
 	}
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, Pwm_CH4_CompareValue); //进行占空比调整
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, Pwm_CH4_CompareValue); //进行占空比调�?
 }
 
 
@@ -269,7 +280,7 @@ void System_Init(void) {
 	  HAL_UART_Receive_IT(&huart1,&Uart1_Rx_Char,1);
 
 	  /*input cap Init*/
-	  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);	// �???????????????启输入捕获中�???????????????
+	  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);	// �????????????????启输入捕获中�????????????????
 	  __HAL_TIM_ENABLE_IT(&htim2,TIM_IT_UPDATE);	//使能更新中断
 
 	  /*ADC  Dma Init*/
@@ -279,18 +290,40 @@ void System_Init(void) {
 	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
 	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
+	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //motor init
+	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, Pwm_CH4_CompareValue); //boost init
 
 	  /*pid partParameter Set*/
 	  Set_PID_Parameter(1,1,1);
 	  Set_PID_Parameter1(1,1,1);
 
+	  /*tim3 init*/
+	  HAL_TIM_Base_Start_IT(&htim3);
 }
 
 void Tcp_DataDeal(void) {
 	  //Server_SentTo_Client(Wifi_Command_Buffer);
 	  char Str[40] = {0};
-	  sprintf(Str, "Cycle:%d|Width:%d|I:%f|V:%f", (int)Cycle, (int)Width, ADC_ValueAverage[0], ADC_ValueAverage[1]);
-	  Server_SentTo_Client((uint8_t *)Str);
+	  if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"Cycle\r")) {
+		  sprintf(Str, "Cycle:%d", (int)Cycle);
+		  Server_SentTo_Client((uint8_t *)Str);
+	  } else if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"I\r")) {
+		  sprintf(Str, "Motor_I: %f A", ADC_ValueAverage[1]);
+		  Server_SentTo_Client((uint8_t *)Str);
+	  } else if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"V\r")) {
+		  sprintf(Str, "Boost_V: %f V", ADC_ValueAverage[0]);
+		  Server_SentTo_Client((uint8_t *)Str);
+	  } else if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"Speed\r")) {
+		  sprintf(Str, "Speed: %f r/s", (float)2000 / Cycle);
+		  Server_SentTo_Client((uint8_t *)Str);
+	  }
+
+
+	  else {
+		  sprintf(Str, "Cycle:%d|Width:%d|I:%f|V:%f", (int)Cycle, (int)Width, ADC_ValueAverage[1], ADC_ValueAverage[0]);
+	  	  Server_SentTo_Client((uint8_t *)Str);
+	  }
+
 }
 /* USER CODE END 4 */
 

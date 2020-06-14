@@ -32,6 +32,8 @@ extern uint8_t Rx_Buffer_Size;
 extern uint8_t Rx_Line_Flag;
 extern uint8_t Wifi_Get_Command_Flag;
 
+extern uint8_t Uart3_Rx_Char;
+extern uint16_t Distance;
 
 void Server_Init(void);
 void Server_SentTo_Client(uint8_t *Str);

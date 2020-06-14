@@ -97,6 +97,7 @@ int main(void)
   MX_I2C2_Init();
   MX_USART1_UART_Init();
   MX_TIM2_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
   System_Init();
   /* USER CODE END 2 */
@@ -172,19 +173,35 @@ void System_Init(void) {
 
 	/*input cap Init*/
 	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
-	__HAL_TIM_ENABLE_IT(&htim2,TIM_IT_UPDATE);	//使能更新中断
+	__HAL_TIM_ENABLE_IT(&htim2,TIM_IT_UPDATE);
+
+
+	/*distance init*/
+	HAL_UART_Receive_IT(&huart3,&Uart3_Rx_Char,1);
 }
 
 void OledDisplay(void) {
 	OLED_ShowFlort(60, 2, (float)2000 / Cycle, 16);
-	OLED_ShowFlort(60, 4, (float)1, 16);
+	OLED_ShowFlort(60, 4, (float)(Distance - 40) / 10, 16);
 }
 
 void Tcp_DataDeal(void) {
-	Server_SentTo_Client(Wifi_Command_Buffer);
-	char Str[50];
-	sprintf(Str, "转速:%f 距离：%f", (float)2000 / Cycle, (float)1);
-	Server_SentTo_Client((uint8_t *)Str);
+
+	char Str[40] = {0};
+	if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"Cycle\r")) {
+		sprintf(Str, "Cycle:%d", (int)Cycle);
+		Server_SentTo_Client((uint8_t *)Str);
+	} else if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"Distance\r")) {
+		sprintf(Str, "Distance: %f cm", (float)(Distance - 40) / 10);
+		Server_SentTo_Client((uint8_t *)Str);
+	} else if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"Speed\r")) {
+		sprintf(Str, "Speed: %f r/s", (float)2000 / Cycle);
+		Server_SentTo_Client((uint8_t *)Str);
+	} else {
+		sprintf(Str, "Speed: %f r/s\r\nDistance: %f cm", (float)2000 / Cycle, (float)(Distance - 40) / 10);
+		Server_SentTo_Client((uint8_t *)Str);
+	}
+
 }
 /* USER CODE END 4 */
 

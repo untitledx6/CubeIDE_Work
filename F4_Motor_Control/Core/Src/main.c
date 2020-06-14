@@ -56,8 +56,8 @@ uint8_t Up_Flag = 1;  // 1 up 0 down
 float Target_V = 15;
 float Target_Speed = 3;
 
-uint16_t Pwm_CH4_CompareValue = 80;
-uint16_t Pwm_Motor_CompareValue = 50;
+uint16_t Pwm_Boost_CompareValue = 80;  //boost init compareValue
+uint16_t Pwm_Motor_CompareValue = 10; //pwm motor init compareValue
 
 /* USER CODE END PV */
 
@@ -65,10 +65,10 @@ uint16_t Pwm_Motor_CompareValue = 50;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void System_Init(void); // system init
-void Set_CompareValue(uint8_t CompareValue); //调占空比
+void Set_CompareValue(uint8_t CompareValue); //set motor comparevalue
 void Boost_Control(void);  //boost
 void StateJudgment(float Speed);
-void Change_Direction(void);  //换方�?
+void Direction_Control(void);  // Control the direct
 
 /* USER CODE END PFP */
 
@@ -111,6 +111,7 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
   System_Init();
   /* USER CODE END 2 */
@@ -120,21 +121,21 @@ int main(void)
   while (1)
   {
 	  /*
-	  float Pid_Output = PID_Calc((float)2000 / Cycle, Target_Speed); //进行Pid运算
-	  Pwm_Motor_CompareValue += (uint16_t) Pid_Output; //pwm比较值加上pid运算结果，实现闭环控�?
-	  if(Pwm_Motor_CompareValue >= 100) {//如果占空比大�?1则，回调�?1/2
+	  float Pid_Output = PID_Calc((float)2000 / Cycle, Target_Speed); //Perform Pid operation
+	  Pwm_Motor_CompareValue += (uint16_t) Pid_Output; //Pwm+ PIdoutput
+	  if(Pwm_Motor_CompareValue >= 100) {//if compare too high
 		  Pwm_Motor_CompareValue = 100/2;
 	  }
-	  if(Pwm_Motor_CompareValue <= 0) { //如果占空比小�?0则调�?0
+	  if(Pwm_Motor_CompareValue <= 0) { //ifcompare too low
 		  Pwm_Motor_CompareValue = 0;
 	  }
-	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //进行占空比调�?
+	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //set the compareValue
 
 	  StateJudgment((float)2000 / Cycle);
 	  Boost_Control();
 	  */
-	  Update_Data();
-	  Tcp_DataAccept();
+	  Update_Data(); //update data,do fliter to change ADC_ValueAverage
+	  Tcp_DataAccept(); //get tcp data and deal the wifi request
 
 	//  Times_Buffer;
 	 // Times++;
@@ -198,25 +199,29 @@ void Set_CompareValue(uint8_t CompareValue) {
 	}
 }
 
-void Change_Direction(void) {
+void Direction_Control(void) {
 	if(Up_Flag == 1) {
-
+		Set_CompareValue((uint8_t)0);
+		Up_Flag = 0;
+	} else {
+		Set_CompareValue((uint8_t)0);
+		Up_Flag = 1;
 	}
 }
 
 #define BufferSize 10
-float Speed_Buffer[BufferSize]; //速度缓冲�?
-float MaxRange = 1.2,MinRange = 0.8; //失�?�范�?
+float Speed_Buffer[BufferSize]; //speed buffer
+float MaxRange = 1.2,MinRange = 0.8; //Speed stability range
 uint8_t BufferIndex = 0;
-uint8_t SystemState = 0; //状�??1为匀�? 2为失�? 3为失速恢�?
-float StableI = 0; //�?速电�?
+uint8_t SystemState = 0; //system status:0init,1Uniform speed,2Lost speed after constant speed,3restore
+float StableI = 0; // I at constant speed
 void StateJudgment(float Speed) {
 	Speed_Buffer[BufferIndex] = Speed;
 	BufferIndex++;
 	if(BufferIndex == BufferSize) {
 		BufferIndex = 0;
 	}
-	if(SystemState == 0) { //初始状�??
+	if(SystemState == 0) { //init
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 			return;
 		}
@@ -225,17 +230,17 @@ void StateJudgment(float Speed) {
 				return;
 			}
 		}
-		SystemState = 1; //速度恒定  进入�?速模�?
-		StableI = ADC_ValueAverage[1]; //1kg时的电流
+		SystemState = 1; //constant speed
+		StableI = ADC_ValueAverage[1]; //Current at constant speed
 		return;
 	}
-	if(SystemState == 1) { //�?�?
+	if(SystemState == 1) { //constant speed
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
-			SystemState = 2; //�?速模式被打破
+			SystemState = 2; //Constant speed mode is broken
 			return;
 		}
 	}
-	if(SystemState == 2) { //�?速后失�??
+	if(SystemState == 2) { //Enter the speed control state
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
 			return;
 		}
@@ -244,33 +249,32 @@ void StateJudgment(float Speed) {
 				return;
 			}
 		}
-		SystemState = 3; //失�?�后 又恢复为�?�?
+		SystemState = 3; //The speed adjustment is completed and the speed is restored
 		return;
 	}
-	if(SystemState == 3) { //失�?�后恢复
+	if(SystemState == 3) { //the speed is restored
 		if(Up_Flag == 1 && ADC_ValueAverage[1] > 1.5 * StableI) {
-			//Beep();  //上升时失�?
+			//Beep();  //When rising
 		}
 		if(Up_Flag == 0 && ADC_ValueAverage[1] < 0.5 * StableI) {
-			//Beep(); //下降时失�?
+			//Beep(); //When falling
 		}
-		SystemState = 1; //恢复�?速模�?
+		SystemState = 1; //Return to constant speed mode
 	}
 }
 
 
 void Boost_Control(void) {
-	float Pid_Output = PID_Calc1(ADC_ValueAverage[0], Target_V); //进行Pid运算
-	Pwm_CH4_CompareValue += (uint16_t) Pid_Output; //pwm比较值加上pid运算结果，实现闭环控�?
-	if(Pwm_CH4_CompareValue >= 100) {//如果占空比大�?1则，回调�?1/2
-		Pwm_CH4_CompareValue = 100/2;
+	float Pid_Output = PID_Calc1(ADC_ValueAverage[0], Target_V); //Perform Pid operation
+	Pwm_Boost_CompareValue += (uint16_t) Pid_Output; //Pwm+ PIdoutput
+	if(Pwm_Boost_CompareValue >= 100) {//if compare too high
+		Pwm_Boost_CompareValue = 100/2;
 	}
-	if(Pwm_CH4_CompareValue <= 0) { //如果占空比小�?0则调�?0
-		Pwm_CH4_CompareValue = 0;
+	if(Pwm_Boost_CompareValue <= 0) { //if compare too low
+		Pwm_Boost_CompareValue = 0;
 	}
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, Pwm_CH4_CompareValue); //进行占空比调�?
+	__HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, Pwm_Boost_CompareValue); //set the compareValue
 }
-
 
 
 void System_Init(void) {
@@ -280,25 +284,29 @@ void System_Init(void) {
 	  HAL_UART_Receive_IT(&huart1,&Uart1_Rx_Char,1);
 
 	  /*input cap Init*/
-	  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);	// �????????????????启输入捕获中�????????????????
-	  __HAL_TIM_ENABLE_IT(&htim2,TIM_IT_UPDATE);	//使能更新中断
+	  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);	// Start timer input capture channel
+	  __HAL_TIM_ENABLE_IT(&htim2,TIM_IT_UPDATE);	//Enable update interrupt
 
 	  /*ADC  Dma Init*/
 	  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&ADC_Value, Sample_Num * Channel_Num);
 
-	  /*PWM Init*/
-	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
+	  /*motor Init*/
+	  //HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
 	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
 	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //motor init
-	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, Pwm_CH4_CompareValue); //boost init
+
+	  /*Boost Init*/
+	  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+	  HAL_TIMEx_PWMN_Start(&htim8, TIM_CHANNEL_1);//boost init
+	  __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, Pwm_Boost_CompareValue);
 
 	  /*pid partParameter Set*/
 	  Set_PID_Parameter(1,1,1);
 	  Set_PID_Parameter1(1,1,1);
 
 	  /*tim3 init*/
-	  HAL_TIM_Base_Start_IT(&htim3);
+	  HAL_TIM_Base_Start_IT(&htim3);  //50ms interrupt
 }
 
 void Tcp_DataDeal(void) {
@@ -317,8 +325,6 @@ void Tcp_DataDeal(void) {
 		  sprintf(Str, "Speed: %f r/s", (float)2000 / Cycle);
 		  Server_SentTo_Client((uint8_t *)Str);
 	  }
-
-
 	  else {
 		  sprintf(Str, "Cycle:%d|Width:%d|I:%f|V:%f", (int)Cycle, (int)Width, ADC_ValueAverage[1], ADC_ValueAverage[0]);
 	  	  Server_SentTo_Client((uint8_t *)Str);

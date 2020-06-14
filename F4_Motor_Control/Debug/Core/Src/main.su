@@ -1,9 +1,9 @@
 main.c:84:5:main	8	static
-main.c:152:6:SystemClock_Config	88	static
-main.c:191:6:Set_CompareValue	16	static
-main.c:201:6:Change_Direction	4	static
-main.c:213:6:StateJudgment	24	static
-main.c:262:6:Boost_Control	16	static
-main.c:276:6:System_Init	8	static
-main.c:304:6:Tcp_DataDeal	80	static
-main.c:334:6:Error_Handler	4	static
+main.c:153:6:SystemClock_Config	88	static
+main.c:192:6:Set_CompareValue	16	static
+main.c:202:6:Direction_Control	8	static
+main.c:218:6:StateJudgment	24	static
+main.c:267:6:Boost_Control	16	static
+main.c:281:6:System_Init	8	static
+main.c:313:6:Tcp_DataDeal	80	static
+main.c:343:6:Error_Handler	4	static

@@ -1,4 +1,4 @@
-00:02:29 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+00:10:46 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
@@ -8,21 +8,14 @@ arm-none-eabi-objdump -h -S  F4_Motor_Control.elf  > "F4_Motor_Control.list"
 arm-none-eabi-objcopy  -O binary  F4_Motor_Control.elf  "F4_Motor_Control.bin"
 arm-none-eabi-size   F4_Motor_Control.elf 
    text	   data	    bss	    dec	    hex	filename
-  38088	    492	   4052	  42632	   a688	F4_Motor_Control.elf
+  38880	    488	   4112	  43480	   a9d8	F4_Motor_Control.elf
 Finished building: default.size.stdout
  
 Finished building: F4_Motor_Control.bin
  
 Finished building: F4_Motor_Control.list
  
-00:02:35 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
-make -j8 all 
-arm-none-eabi-size   F4_Motor_Control.elf 
-   text	   data	    bss	    dec	    hex	filename
-  38088	    492	   4052	  42632	   a688	F4_Motor_Control.elf
-Finished building: default.size.stdout
- 
-00:05:50 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+00:13:00 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I"D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC" -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
@@ -32,10 +25,45 @@ arm-none-eabi-objdump -h -S  F4_Motor_Control.elf  > "F4_Motor_Control.list"
 arm-none-eabi-objcopy  -O binary  F4_Motor_Control.elf  "F4_Motor_Control.bin"
 arm-none-eabi-size   F4_Motor_Control.elf 
    text	   data	    bss	    dec	    hex	filename
-  38200	    492	   4052	  42744	   a6f8	F4_Motor_Control.elf
+  38888	    492	   4116	  43496	   a9e8	F4_Motor_Control.elf
 Finished building: default.size.stdout
  
 Finished building: F4_Motor_Control.bin
  
 Finished building: F4_Motor_Control.list
+ 
+00:13:34 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38888	    492	   4116	  43496	   a9e8	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+00:14:02 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38888	    492	   4116	  43496	   a9e8	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+00:14:29 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38888	    492	   4116	  43496	   a9e8	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+00:14:41 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38888	    492	   4116	  43496	   a9e8	F4_Motor_Control.elf
+Finished building: default.size.stdout
+ 
+00:14:54 **** Incremental Build of configuration Debug for project F4_Motor_Control ****
+make -j8 all 
+arm-none-eabi-size   F4_Motor_Control.elf 
+   text	   data	    bss	    dec	    hex	filename
+  38888	    492	   4116	  43496	   a9e8	F4_Motor_Control.elf
+Finished building: default.size.stdout
  

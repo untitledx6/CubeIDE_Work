@@ -7,6 +7,10 @@ uint8_t Rx_Buffer_Size = 0;
 uint8_t Rx_Line_Flag = 0;
 uint8_t Wifi_Get_Command_Flag = 0;
 
+uint16_t Distance;
+uint8_t Uart3_Rx_Char;
+uint8_t Get_Data_Flag = 0;
+uint16_t Distance_Buffer;
 
 
 void Server_Init(void) {
@@ -82,6 +86,24 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 			}
 		}
 		HAL_UART_Receive_IT(&huart1,&Uart1_Rx_Char,1);
+	}
+
+	if(huart->Instance == huart3.Instance) {
+		if(Uart3_Rx_Char == 'd') {
+			Distance_Buffer = 0;
+			Get_Data_Flag = 1;
+		}
+		if(Get_Data_Flag == 1) {
+			if(Uart3_Rx_Char >= '0' && Uart3_Rx_Char <= '9') {
+				Distance_Buffer += Uart3_Rx_Char - '0';
+				Distance_Buffer *= 10;
+			}
+			if(Uart3_Rx_Char == 'm') {
+				Distance =  Distance_Buffer / 10;
+				Get_Data_Flag = 0;
+			}
+		}
+		HAL_UART_Receive_IT(&huart3,&Uart3_Rx_Char,1);
 	}
 }
 

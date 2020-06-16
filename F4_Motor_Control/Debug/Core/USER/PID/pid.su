@@ -1,4 +1,4 @@
-pid.c:21:7:PID_Calc	16	static
-pid.c:54:6:Set_PID_Parameter	24	static
-pid.c:69:7:PID_Calc1	16	static
-pid.c:102:6:Set_PID_Parameter1	24	static
+pid.c:21:7:PID_Calc	24	static
+pid.c:64:6:Set_PID_Parameter	24	static
+pid.c:79:7:PID_Calc1	16	static
+pid.c:112:6:Set_PID_Parameter1	24	static

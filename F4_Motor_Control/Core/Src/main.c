@@ -123,7 +123,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  Motor_Contorl();
+	 // Motor_Contorl();
 	 StateJudgment((float)2000 / 30 / Cycle);
 	 //Boost_Control();
 
@@ -201,7 +201,7 @@ void Direction_Control(void) {
 }
 
 #define BufferSize 400
-float MaxRange = 1.06,MinRange = 0.94; //Speed stability range
+float MaxRange = 1.015,MinRange = 0.985; //Speed stability range
 
 uint16_t BufferIndex = 0;
 
@@ -312,11 +312,11 @@ void System_Init(void) {
 	  __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, Pwm_Boost_CompareValue);
 
 	  /*pid partParameter Set*/
-	  Set_PID_Parameter(1.2, 0.1, 0);
+	  Set_PID_Parameter(30, 20, 0);
 	  Set_PID_Parameter1(1, 1, 1);
 
 	  /*tim3 init*/
-	  HAL_TIM_Base_Start_IT(&htim3);  //50ms interrupt
+	  HAL_TIM_Base_Start_IT(&htim3);  //10ms interrupt
 }
 uint16_t CompareValue_Buffer = 0;
 void Tcp_DataDeal(void) {

@@ -20,6 +20,15 @@ float error[20];
 
 float PID_Calc(float Input,float setpoint)
 {
+
+
+	float Pid_Out = 0;
+	static float Bias,Last_bias;
+	Bias=setpoint-Input;                                  //计算偏差
+	Pid_Out=kp*(Bias-Last_bias)+ki*Bias;   //增量式PI控制器
+	Last_bias=Bias;	                                     //保存上一次偏差
+	return Pid_Out;                                           //增量输出
+	/*
 	static uint16_t left = 0;
 	static uint16_t right = 0;
 	static uint16_t flag = 0;
@@ -49,6 +58,7 @@ float PID_Calc(float Input,float setpoint)
 	}
 	
 	return temp;
+	*/
 }
 
 void Set_PID_Parameter(float KP,float KI,float KD)

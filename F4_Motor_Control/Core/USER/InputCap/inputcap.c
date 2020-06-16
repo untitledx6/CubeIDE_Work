@@ -7,7 +7,7 @@ uint8_t		TIM5CH1_CAPTURE_STA = 0;	// 输入捕获状态
 uint32_t	TIM5CH1_CAPTURE_VAL;		// 输入捕获值(TIM2/TIM5是32位的定时器所以这里定义为uint32_t)
 uint8_t  DownEdgeFlag = 0;
 
-uint32_t Cycle = 0, Width = 0;
+uint32_t Cycle = 20, Width = 0;
 
 uint32_t Times = 0, Times_Buffer = 0;
 
@@ -40,8 +40,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
 
   if(htim->Instance == TIM3) {
-	  Times_Buffer = Times;
-	  Times = 0;
+	  //Motor_Contorl();
+
+	  //Times_Buffer = Times;
+	  //Times = 0;
   }
 }
 

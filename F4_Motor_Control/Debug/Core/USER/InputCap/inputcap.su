@@ -1,2 +1,2 @@
 inputcap.c:15:6:HAL_TIM_PeriodElapsedCallback	16	static
-inputcap.c:51:6:HAL_TIM_IC_CaptureCallback	16	static
+inputcap.c:53:6:HAL_TIM_IC_CaptureCallback	16	static

@@ -54,10 +54,10 @@
 uint8_t Up_Flag = 1;  // 1 up 0 down
 
 float Target_V = 15;
-float Target_Speed = 3;
+float Target_Speed = 2;
 
 uint16_t Pwm_Boost_CompareValue = 80;  //boost init compareValue
-uint16_t Pwm_Motor_CompareValue = 10; //pwm motor init compareValue
+int Pwm_Motor_CompareValue = 500; //pwm motor init compareValue
 
 /* USER CODE END PV */
 
@@ -65,8 +65,11 @@ uint16_t Pwm_Motor_CompareValue = 10; //pwm motor init compareValue
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void System_Init(void); // system init
-void Set_CompareValue(uint8_t CompareValue); //set motor comparevalue
+void Set_CompareValue(int CompareValue); //set motor comparevalue
+
 void Boost_Control(void);  //boost
+void Motor_Contorl(void);
+
 void StateJudgment(float Speed);
 void Direction_Control(void);  // Control the direct
 
@@ -120,25 +123,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  /*
-	  float Pid_Output = PID_Calc((float)2000 / Cycle, Target_Speed); //Perform Pid operation
-	  Pwm_Motor_CompareValue += (uint16_t) Pid_Output; //Pwm+ PIdoutput
-	  if(Pwm_Motor_CompareValue >= 100) {//if compare too high
-		  Pwm_Motor_CompareValue = 100/2;
-	  }
-	  if(Pwm_Motor_CompareValue <= 0) { //ifcompare too low
-		  Pwm_Motor_CompareValue = 0;
-	  }
-	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //set the compareValue
+	  Motor_Contorl();
+	 StateJudgment((float)2000 / 30 / Cycle);
+	 //Boost_Control();
 
-	  StateJudgment((float)2000 / Cycle);
-	  Boost_Control();
-	  */
+
 	  Update_Data(); //update data,do fliter to change ADC_ValueAverage
 	  Tcp_DataAccept(); //get tcp data and deal the wifi request
-
-	//  Times_Buffer;
-	 // Times++;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -189,86 +180,105 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void Set_CompareValue(uint8_t CompareValue) {
+void Set_CompareValue(int CompareValue) {
 	if(Up_Flag == 1) {
 		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 0);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, CompareValue);
+		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, (uint16_t)CompareValue);
 	} else {
 		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 0);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, CompareValue);
+		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, (uint16_t)CompareValue);
 	}
 }
 
 void Direction_Control(void) {
 	if(Up_Flag == 1) {
-		Set_CompareValue((uint8_t)0);
+		Set_CompareValue((uint16_t)0);
 		Up_Flag = 0;
 	} else {
-		Set_CompareValue((uint8_t)0);
+		Set_CompareValue((uint16_t)0);
 		Up_Flag = 1;
 	}
 }
 
-#define BufferSize 10
-float Speed_Buffer[BufferSize]; //speed buffer
-float MaxRange = 1.2,MinRange = 0.8; //Speed stability range
-uint8_t BufferIndex = 0;
+#define BufferSize 400
+float MaxRange = 1.06,MinRange = 0.94; //Speed stability range
+
+uint16_t BufferIndex = 0;
+
 uint8_t SystemState = 0; //system status:0init,1Uniform speed,2Lost speed after constant speed,3restore
 float StableI = 0; // I at constant speed
 void StateJudgment(float Speed) {
-	Speed_Buffer[BufferIndex] = Speed;
-	BufferIndex++;
-	if(BufferIndex == BufferSize) {
-		BufferIndex = 0;
-	}
 	if(SystemState == 0) { //init
+
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
+			BufferIndex = 0;
+		} else {
+			BufferIndex++;
+		}
+		if(BufferIndex == BufferSize) {
+			SystemState = 1; //constant speed
+			StableI = ADC_ValueAverage[1]; //Current at constant speed
+			//HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);
+			BufferIndex = 0;
 			return;
 		}
-		for(uint8_t i = 0; i < BufferSize; i++) {
-			if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
-				return;
-			}
-		}
-		SystemState = 1; //constant speed
-		StableI = ADC_ValueAverage[1]; //Current at constant speed
-		return;
 	}
 	if(SystemState == 1) { //constant speed
-		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
-			SystemState = 2; //Constant speed mode is broken
+		if(Speed > Target_Speed * 1.3 || Speed < Target_Speed * 0.7) {
+			BufferIndex++;
+		} else {
+			BufferIndex = 0;
+		}
+		if(BufferIndex == 10) {
+			SystemState = 2;
+			//HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);
+			BufferIndex = 0;
 			return;
 		}
 	}
 	if(SystemState == 2) { //Enter the speed control state
 		if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
+			BufferIndex = 0;
+		} else {
+			BufferIndex++;
+		}
+		if(BufferIndex == BufferSize) {
+			SystemState = 3; //constant speed
+			//HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);
+			BufferIndex = 0;
 			return;
 		}
-		for(uint8_t i = 0; i < BufferSize; i++) {
-			if((Speed < Target_Speed * MinRange) || (Speed > Target_Speed * MaxRange)) {
-				return;
-			}
-		}
-		SystemState = 3; //The speed adjustment is completed and the speed is restored
-		return;
 	}
 	if(SystemState == 3) { //the speed is restored
-		if(Up_Flag == 1 && ADC_ValueAverage[1] > 1.5 * StableI) {
+		if(Up_Flag == 1 && (fabs(ADC_ValueAverage[1] - 1.65) > 1.5 * fabs(StableI - 1.65))) {
+			HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);
 			//Beep();  //When rising
 		}
-		if(Up_Flag == 0 && ADC_ValueAverage[1] < 0.5 * StableI) {
+		if(Up_Flag == 0 && (fabs(ADC_ValueAverage[1] - 1.65) < 0.5 * fabs(StableI - 1.65))) {
+			HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET);
 			//Beep(); //When falling
 		}
 		SystemState = 1; //Return to constant speed mode
 	}
 }
 
+void Motor_Contorl(void) {
+	 float Pid_Output = PID_Calc((float)2000 / 30 / Cycle , Target_Speed); //Perform Pid operation
+	 Pwm_Motor_CompareValue += (int) Pid_Output; //Pwm+ PIdoutput
+	 if(Pwm_Motor_CompareValue >= 1000) {//if compare too high
+		 Pwm_Motor_CompareValue = 1000/2;
+	 }
+	 if(Pwm_Motor_CompareValue <= 0) { //ifcompare too low
+		 Pwm_Motor_CompareValue = 0;
+	 }
+	 Set_CompareValue(Pwm_Motor_CompareValue); //set the compareValue
+}
 
 void Boost_Control(void) {
 	float Pid_Output = PID_Calc1(ADC_ValueAverage[0], Target_V); //Perform Pid operation
 	Pwm_Boost_CompareValue += (uint16_t) Pid_Output; //Pwm+ PIdoutput
-	if(Pwm_Boost_CompareValue >= 100) {//if compare too high
-		Pwm_Boost_CompareValue = 100/2;
+	if(Pwm_Boost_CompareValue >= 1000) {//if compare too high
+		Pwm_Boost_CompareValue = 1000/2;
 	}
 	if(Pwm_Boost_CompareValue <= 0) { //if compare too low
 		Pwm_Boost_CompareValue = 0;
@@ -294,7 +304,7 @@ void System_Init(void) {
 	  //HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
 	  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
-	  Set_CompareValue((uint8_t)Pwm_Motor_CompareValue); //motor init
+	  Set_CompareValue(Pwm_Motor_CompareValue); //motor init
 
 	  /*Boost Init*/
 	  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
@@ -302,13 +312,13 @@ void System_Init(void) {
 	  __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_1, Pwm_Boost_CompareValue);
 
 	  /*pid partParameter Set*/
-	  Set_PID_Parameter(1,1,1);
-	  Set_PID_Parameter1(1,1,1);
+	  Set_PID_Parameter(1.2, 0.1, 0);
+	  Set_PID_Parameter1(1, 1, 1);
 
 	  /*tim3 init*/
 	  HAL_TIM_Base_Start_IT(&htim3);  //50ms interrupt
 }
-
+uint16_t CompareValue_Buffer = 0;
 void Tcp_DataDeal(void) {
 	  //Server_SentTo_Client(Wifi_Command_Buffer);
 	  char Str[40] = {0};
@@ -325,6 +335,28 @@ void Tcp_DataDeal(void) {
 		  sprintf(Str, "Speed: %f r/s", (float)2000 / Cycle);
 		  Server_SentTo_Client((uint8_t *)Str);
 	  }
+	  else if(Wifi_Command_Buffer[0] == 'S' && Wifi_Command_Buffer[1] == 'E' && Wifi_Command_Buffer[2] == 'T') {
+		  if(Wifi_Command_Buffer[3] == 'C') {
+			  for(uint8_t i = 5; Wifi_Command_Buffer[i] != '\r'; i++) {
+				  CompareValue_Buffer += Wifi_Command_Buffer[i] - '0';
+				  CompareValue_Buffer *= 10;
+			  }
+			  CompareValue_Buffer /= 10;
+			  Pwm_Motor_CompareValue = (int)CompareValue_Buffer;
+
+			  Target_Speed = (float)CompareValue_Buffer;
+			  //Set_CompareValue((uint16_t)Pwm_Motor_CompareValue);
+
+			  CompareValue_Buffer = 0;
+		  }
+		  if(Wifi_Command_Buffer[3] == 'T') {
+			  Direction_Control();
+	 	  }
+
+	  }
+
+
+
 	  else {
 		  sprintf(Str, "Cycle:%d|Width:%d|I:%f|V:%f", (int)Cycle, (int)Width, ADC_ValueAverage[1], ADC_ValueAverage[0]);
 	  	  Server_SentTo_Client((uint8_t *)Str);

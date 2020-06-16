@@ -1,6 +1,7 @@
 #include "main.h"
+#include "math.h"
 
-#define Sample_Num 100 //每一个通道的采样数
+#define Sample_Num 233 //每一个通道的采样数
 #define Channel_Num  2//通道数量， 一个为电压量，一个为电流量。
 
 extern uint32_t ADC_Value[Sample_Num][Channel_Num];

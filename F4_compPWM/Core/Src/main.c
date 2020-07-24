@@ -91,7 +91,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
-  //HAL_TIMEx_ConfigBreakDeadTime(htim, sBreakDeadTimeConfig);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,10 +98,7 @@ int main(void)
   while (1)
   {
 	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
-	for(uint8_t i = 0; i < 100; i++) {
-		HAL_Delay(1000);
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, i * 10);
-	}
+	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 200);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

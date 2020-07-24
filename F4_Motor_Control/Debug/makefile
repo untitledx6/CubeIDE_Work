@@ -44,8 +44,8 @@ F4_Motor_Control.bin \
 all: F4_Motor_Control.elf secondary-outputs
 
 # Tool invocations
-F4_Motor_Control.elf: $(OBJS) $(USER_OBJS) D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld
-	arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+F4_Motor_Control.elf: $(OBJS) $(USER_OBJS) C:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld
+	arm-none-eabi-gcc -o "F4_Motor_Control.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\work\study\stm32\cubeIDEworkspace\F4_Motor_Control\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_Motor_Control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

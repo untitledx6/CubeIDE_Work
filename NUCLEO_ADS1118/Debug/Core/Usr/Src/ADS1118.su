@@ -1,0 +1,2 @@
+ADS1118.c:7:5:ADS1118_GetData	24	static
+ADS1118.c:30:7:ADS1118_GetVoltage	32	static

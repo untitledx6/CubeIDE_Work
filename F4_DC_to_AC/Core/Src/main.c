@@ -51,7 +51,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint32_t ADC_ConvertedValue[Channel_Num] = {0}; //定义DMA数据的存储地址
+uint16_t ADC_ConvertedValue[Channel_Num] = {0}; //定义DMA数据的存储地址
 int SIN_LUT_index = 0;//sin表指针，用来定位sin表中的值
 uint16_t Sin_Lut[SIN_NUM] = {0};  //sin表
 uint16_t Output_Polarity_Flag = 0; //输出极性标志，0和1分别为前半周期和后半周期

@@ -181,13 +181,13 @@ void System_Init(void) {
 }
 
 void OledDisplay(void) {
-	OLED_ShowFlort(60, 2, (float)2000 / Cycle, 16);
+	OLED_ShowFlort(60, 2, (float)2000 / 30 / Cycle, 16);
 	OLED_ShowFlort(60, 4, (float)(Distance - 40) / 10, 16);
 }
 
 void Tcp_DataDeal(void) {
 
-	char Str[40] = {0};
+	char Str[50] = {0};
 	if(Strcmp(Wifi_Command_Buffer, (uint8_t *)"Cycle\r")) {
 		sprintf(Str, "Cycle:%d", (int)Cycle);
 		Server_SentTo_Client((uint8_t *)Str);
@@ -198,7 +198,7 @@ void Tcp_DataDeal(void) {
 		sprintf(Str, "Speed: %f r/s", (float)2000 / Cycle);
 		Server_SentTo_Client((uint8_t *)Str);
 	} else {
-		sprintf(Str, "Speed: %f r/s\r\nDistance: %f cm", (float)2000 / Cycle, (float)(Distance - 40) / 10);
+		sprintf(Str, "Speed: %f r/s\r\nDistance: %f cm", (float)2000 / 30 / Cycle, (float)(Distance - 40) / 10);
 		Server_SentTo_Client((uint8_t *)Str);
 	}
 

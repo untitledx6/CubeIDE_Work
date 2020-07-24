@@ -1,0 +1,25 @@
+15:47:32 **** Incremental Build of configuration Debug for project NUCLEO_ADS1118 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Usr/Src/ADS1118.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"C:/work/study/stm32/cubeIDEworkspace/NUCLEO_ADS1118/Core/Usr/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Usr/Src/ADS1118.d" -MT"Core/Usr/Src/ADS1118.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Usr/Src/ADS1118.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I"C:/work/study/stm32/cubeIDEworkspace/NUCLEO_ADS1118/Core/Usr/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:102:10: warning: unused variable 't' [-Wunused-variable]
+   float  t = ADS1118_GetVoltage(5, 1, 4);
+          ^
+arm-none-eabi-gcc -o "NUCLEO_ADS1118.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\work\study\stm32\cubeIDEworkspace\NUCLEO_ADS1118\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUCLEO_ADS1118.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NUCLEO_ADS1118.elf
+ 
+arm-none-eabi-objdump -h -S  NUCLEO_ADS1118.elf  > "NUCLEO_ADS1118.list"
+arm-none-eabi-objcopy  -O binary  NUCLEO_ADS1118.elf  "NUCLEO_ADS1118.bin"
+arm-none-eabi-size   NUCLEO_ADS1118.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9028	     44	   1732	  10804	   2a34	NUCLEO_ADS1118.elf
+Finished building: default.size.stdout
+ 
+Finished building: NUCLEO_ADS1118.bin
+ 
+Finished building: NUCLEO_ADS1118.list
+ 
+
+15:47:34 Build Finished. 0 errors, 1 warnings. (took 1s.393ms)
+

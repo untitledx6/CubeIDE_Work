@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;NUCLEO_ADS1118/Core/Usr/Src&apos;" deleteContents="false" description="Delete resource &apos;NUCLEO_ADS1118/Core/Usr/Src&apos;" element1="/NUCLEO_ADS1118/Core/Usr/Src" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1595483149234"/>
+</session>

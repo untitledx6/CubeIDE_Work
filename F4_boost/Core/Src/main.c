@@ -49,7 +49,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint32_t ADC_ConvertedValue[Sample_Num][Channel_Num]; //定义DMA数据的存储地址
+uint16_t ADC_ConvertedValue[Sample_Num][Channel_Num]; //定义DMA数据的存储地址
 float ADC_Valuetmp[Sample_Num][Channel_Num]; //DMA数据的缓冲区
 float ADC_ValueAverage[Channel_Num]; //用于存储滤波处理之后的数据
 uint16_t DMA_Data_Ready_Flag = 0; //DMA数据就绪标志，为1表示数据已移至缓冲区，为0表示等待数据采集。
@@ -136,7 +136,7 @@ int main(void)
 	  			  for(int i=0; i<Sample_Num-1; i++) { // 冒泡排序
 	  				  for(int j=0; j<Sample_Num-i; j++) {
 	  					  if(ADC_Valuetmp[j][l] > ADC_Valuetmp[j+1][l]) {
-	  						  float tmp = ADC_Valuetmp[j][l];
+	  						  uint16_t tmp = ADC_Valuetmp[j][l];
 	  						  ADC_Valuetmp[j][l] = ADC_Valuetmp[j+1][l];
 	  						  ADC_Valuetmp[j+1][l] = tmp;
 	  					  }

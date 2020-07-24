@@ -97,13 +97,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for(uint8_t i = 0; i < 20; i++){
-		  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, 1000 + i * 100);
-		  HAL_Delay(1000);
-		  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-	  }
-
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

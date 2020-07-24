@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NUCLEO_ADS1118/Core/Usr/INC/ADS1118.c&apos; to &apos;ADS1118.h&apos;" description="Rename resource &apos;ADS1118.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Usr/INC/ADS1118.c" name="ADS1118.h" stamp="1595483192521" updateReferences="true"/>
+</session>

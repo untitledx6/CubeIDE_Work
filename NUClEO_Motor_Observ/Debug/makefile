@@ -44,8 +44,8 @@ NUClEO_Motor_Observ.bin \
 all: NUClEO_Motor_Observ.elf secondary-outputs
 
 # Tool invocations
-NUClEO_Motor_Observ.elf: $(OBJS) $(USER_OBJS) D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld
-	arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+NUClEO_Motor_Observ.elf: $(OBJS) $(USER_OBJS) C:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld
+	arm-none-eabi-gcc -o "NUClEO_Motor_Observ.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\work\study\stm32\cubeIDEworkspace\NUClEO_Motor_Observ\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NUClEO_Motor_Observ.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

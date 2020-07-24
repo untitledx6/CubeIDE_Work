@@ -1,7 +1,0 @@
-#include "main.h"
-
-
-
-extern uint32_t ADC_Value[100];
-extern uint8_t Dma_DataDeal_Flag;
-extern uint32_t ADC_Value_Buffer[100];

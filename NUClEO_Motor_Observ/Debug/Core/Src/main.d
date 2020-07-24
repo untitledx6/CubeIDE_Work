@@ -26,10 +26,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  ../Core/Inc/i2c.h ../Core/Inc/main.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h \
- D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h \
- D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h \
- D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/wifi.h \
- D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h
+ C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h \
+ C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h \
+ C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/wifi.h \
+ C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h
 
 ../Core/Inc/main.h:
 
@@ -93,10 +93,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/gpio.h:
 
-D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h:
+C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h:
 
-D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:
+C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/bmp.h:
 
-D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/wifi.h:
+C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/wifi.h:
 
-D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h:
+C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h:

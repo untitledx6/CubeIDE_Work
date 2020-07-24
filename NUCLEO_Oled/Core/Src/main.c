@@ -94,23 +94,18 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
-  OLED_DrawBMP(0, 0, 128, 8, BMP3);
+  OLED_DrawBMP(0, 0, 128, 8, BMP2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  //OLED_ShowFlort(5, 1, 15.3412, 16);
-	 //OLED_ShowString(5, 3, "GPS", 16);
-	 for(uint8_t i = 0; i < 200; i++) {
-		 //OLED_ShowString(0, 2, "GPS", 16);
-		 //HAL_Delay (100);
-		 OLED_ShowFlort(0, 2, (float)i, 16);
-	 }
+	 // HAL_Delay (100);
+	  OLED_ShowFlort(5, 1, 15.3412, 16);
+	 OLED_ShowString(5, 3, "GPS", 16);
 	 //OLED_ShowString(0, 2, "GPS", 16);
-	 // OLED_ShowCHinese(5, 5, 0);
+	  OLED_ShowCHinese(5, 5, 0);
 	  //OLED_ShowCHinese(16, 4, 20);
 
 	  //OLED_ShowFlort(0, 2, 0.212452, 16);

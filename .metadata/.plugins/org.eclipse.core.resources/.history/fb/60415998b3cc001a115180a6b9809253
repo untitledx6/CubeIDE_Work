@@ -1,0 +1,12 @@
+/*
+ *
+ * https://blog.csdn.net/humphreyandkate/article/details/104731073
+ *
+ */
+
+#define SS 0
+#define MUX 0x4
+#define PGA 0
+#define MODE 1
+
+#define DR 0x4

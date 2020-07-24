@@ -31,10 +31,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/dma.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h \
- D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h \
- D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/inputcap.h \
- D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h \
- D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/pid.h
+ C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h \
+ C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/inputcap.h \
+ C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h \
+ C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/pid.h
 
 ../Core/Inc/main.h:
 
@@ -110,10 +110,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/gpio.h:
 
-D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h:
+C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h:
 
-D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/inputcap.h:
+C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/inputcap.h:
 
-D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h:
+C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h:
 
-D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/pid.h:
+C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/pid.h:

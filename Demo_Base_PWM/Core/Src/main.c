@@ -46,7 +46,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint16_t dutyCycle = 400;
+uint16_t dutyCycle = 500;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,7 +101,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	 /* while (dutyCycle < 1000)
+	  while (dutyCycle < 1000)
 	  	  	  {
 	  	  		  dutyCycle ++;
 	  	  		  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, dutyCycle);
@@ -115,11 +115,7 @@ int main(void)
 	  	  //		  TIM3->CCR2 = dutyCycle;
 	  	  		  HAL_Delay(1);
 	  	  	  }
-	  	  	  HAL_Delay(200); */
-
-	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, dutyCycle);
-
-
+	  	  	  HAL_Delay(200);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

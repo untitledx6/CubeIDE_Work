@@ -62,6 +62,8 @@ void Motor_Contorl(void);
 #define LED_GPIO_Port GPIOG
 #define BEEP_Pin GPIO_PIN_10
 #define BEEP_GPIO_Port GPIOC
+#define Up_Down_Pin GPIO_PIN_11
+#define Up_Down_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

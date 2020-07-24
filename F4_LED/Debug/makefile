@@ -40,8 +40,8 @@ F4_LED.bin \
 all: F4_LED.elf secondary-outputs
 
 # Tool invocations
-F4_LED.elf: $(OBJS) $(USER_OBJS) D:\work\study\stm32\cubeIDEworkspace\F4_LED\STM32F407ZGTX_FLASH.ld
-	arm-none-eabi-gcc -o "F4_LED.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\work\study\stm32\cubeIDEworkspace\F4_LED\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+F4_LED.elf: $(OBJS) $(USER_OBJS) C:\work\study\stm32\cubeIDEworkspace\F4_LED\STM32F407ZGTX_FLASH.ld
+	arm-none-eabi-gcc -o "F4_LED.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\work\study\stm32\cubeIDEworkspace\F4_LED\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

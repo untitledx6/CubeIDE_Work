@@ -1,5 +1,5 @@
 Core/USER/OLED/oled.o: ../Core/USER/OLED/oled.c \
- D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h \
+ C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -25,9 +25,9 @@ Core/USER/OLED/oled.o: ../Core/USER/OLED/oled.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oledfont.h
+ C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oledfont.h
 
-D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h:
+C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
@@ -79,4 +79,4 @@ D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oled.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
-D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oledfont.h:
+C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/oledfont.h:

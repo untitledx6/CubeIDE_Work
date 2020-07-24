@@ -1,5 +1,5 @@
 Core/USER/ADC/AdcDma.o: ../Core/USER/ADC/AdcDma.c \
- D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h \
+ C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -31,7 +31,7 @@ Core/USER/ADC/AdcDma.o: ../Core/USER/ADC/AdcDma.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 
-D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h:
+C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/AdcDma.h:
 
 ../Core/Inc/main.h:
 

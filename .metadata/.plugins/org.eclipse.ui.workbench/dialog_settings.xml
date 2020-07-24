@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="673"/>
-		<item key="DIALOG_Y_ORIGIN" value="151"/>
+		<item key="DIALOG_X_ORIGIN" value="11"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item key="dialogHeight" value="-1"/>
@@ -17,7 +17,7 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="com.st.stm32cube.common.projectcreation.ui.stm32projectfromiocwizard"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.rse.importexport.importWizards"/>
@@ -29,9 +29,9 @@
 	</section>
 	<section name="InstallationDialogSettings">
 		<item key="DIALOG_X_ORIGIN" value="-200"/>
-		<item key="DIALOG_Y_ORIGIN" value="-297"/>
+		<item key="DIALOG_Y_ORIGIN" value="-267"/>
 		<item key="DIALOG_WIDTH" value="1048"/>
-		<item key="DIALOG_HEIGHT" value="1080"/>
+		<item key="DIALOG_HEIGHT" value="1020"/>
 		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
 	</section>
 </section>

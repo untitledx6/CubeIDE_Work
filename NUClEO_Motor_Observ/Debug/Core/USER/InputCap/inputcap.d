@@ -1,5 +1,5 @@
 Core/USER/InputCap/inputcap.o: ../Core/USER/InputCap/inputcap.c \
- D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h \
+ C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h \
  ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -27,7 +27,7 @@ Core/USER/InputCap/inputcap.o: ../Core/USER/InputCap/inputcap.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  ../Core/Inc/tim.h ../Core/Inc/main.h
 
-D:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h:
+C:/work/study/stm32/cubeIDEworkspace/NUClEO_Motor_Observ/Core/USER/INC/inputcap.h:
 
 ../Core/Inc/main.h:
 

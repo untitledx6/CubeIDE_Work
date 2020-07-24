@@ -1,5 +1,5 @@
 Core/USER/WIFI/wifi.o: ../Core/USER/WIFI/wifi.c \
- D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h \
+ C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -32,7 +32,7 @@ Core/USER/WIFI/wifi.o: ../Core/USER/WIFI/wifi.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/usart.h ../Core/Inc/main.h
 
-D:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h:
+C:/work/study/stm32/cubeIDEworkspace/F4_Motor_Control/Core/USER/INC/wifi.h:
 
 ../Core/Inc/main.h:
 

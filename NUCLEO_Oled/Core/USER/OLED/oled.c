@@ -9,9 +9,7 @@ extern I2C_HandleTypeDef hi2c2;
 
 void Write_IIC_Cmddat(unsigned char IIC_Data,unsigned char cmddat)
 {
-	HAL_StatusTypeDef i = HAL_ERROR;
-	i = HAL_I2C_Mem_Write(&hi2c2, oledaddress, cmddat, I2C_MEMADD_SIZE_8BIT, &IIC_Data, 1, 100);
-	i = HAL_ERROR;
+	HAL_I2C_Mem_Write(&hi2c2, oledaddress, cmddat, I2C_MEMADD_SIZE_8BIT, &IIC_Data, 1, 100);
 }
 
 

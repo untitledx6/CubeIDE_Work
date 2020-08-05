@@ -1,9 +1,9 @@
 wifi.c:16:6:Server_Init	8	static
-wifi.c:30:6:Server_SentTo_Client	16	static
-wifi.c:38:10:Strlen	24	static
-wifi.c:45:7:Strcpy	24	static
-wifi.c:52:9:Strcmp	24	static
-wifi.c:66:6:HAL_UART_RxCpltCallback	16	static
-wifi.c:110:6:Tcp_DataAccept	16	static
-wifi.c:139:13:Tcp_DataDeal	4	static
-wifi.c:148:6:IntToStr	24	static
+wifi.c:37:6:Server_SentTo_Client	16	static
+wifi.c:45:10:Strlen	24	static
+wifi.c:52:7:Strcpy	24	static
+wifi.c:59:9:Strcmp	24	static
+wifi.c:73:6:HAL_UART_RxCpltCallback	16	static
+wifi.c:117:6:Tcp_DataAccept	16	static
+wifi.c:146:13:Tcp_DataDeal	4	static
+wifi.c:155:6:IntToStr	24	static

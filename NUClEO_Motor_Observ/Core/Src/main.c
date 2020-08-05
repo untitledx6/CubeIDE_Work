@@ -182,7 +182,7 @@ void System_Init(void) {
 
 void OledDisplay(void) {
 	OLED_ShowFlort(60, 2, (float)2000 / 30 / Cycle, 16);
-	OLED_ShowFlort(60, 4, (float)(Distance - 40) / 10, 16);
+	OLED_ShowFlort(60, 4, (float)(Distance) / 10, 16);
 }
 
 void Tcp_DataDeal(void) {

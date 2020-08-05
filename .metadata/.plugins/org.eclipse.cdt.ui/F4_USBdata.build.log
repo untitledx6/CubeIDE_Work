@@ -1,0 +1,31 @@
+10:02:33 **** Incremental Build of configuration Debug for project F4_USBdata ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F407xx -c -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../USB_DEVICE/App -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'USB_SentStr':
+../Core/Src/main.c:168:23: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  int strSize = strlen(str); //get length
+                       ^~~
+In file included from ../USB_DEVICE/Target/usbd_conf.h:33:0,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:29,
+                 from ../USB_DEVICE/App/usb_device.h:33,
+                 from ../Core/Src/main.c:23:
+c:\st\stm32cubeide_1.3.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610\tools\arm-none-eabi\include\string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+arm-none-eabi-gcc -o "F4_USBdata.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\work\study\stm32\cubeIDEworkspace\F4_USBdata\STM32F407ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F4_USBdata.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F4_USBdata.elf
+ 
+arm-none-eabi-objdump -h -S  F4_USBdata.elf  > "F4_USBdata.list"
+arm-none-eabi-objcopy  -O binary  F4_USBdata.elf  "F4_USBdata.bin"
+arm-none-eabi-size   F4_USBdata.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25584	    464	   3904	  29952	   7500	F4_USBdata.elf
+Finished building: default.size.stdout
+ 
+Finished building: F4_USBdata.bin
+ 
+Finished building: F4_USBdata.list
+ 
+
+10:02:36 Build Finished. 0 errors, 1 warnings. (took 2s.628ms)
+

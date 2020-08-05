@@ -211,6 +211,94 @@ void OLED_ShowFlort(unsigned char x,unsigned char y,float Da,unsigned char Char_
 	}
 
 }
+void OLED_ShowFlort_0p1(unsigned char x,unsigned char y,float Da,unsigned char Char_Size)
+{
+	unsigned char j=0;
+	char chr[10]={0};
+
+
+		if(Da<10)		//防止十位变化成个位小数点前移，导致小数点后两位产生一个不变的不可控制数字
+	{
+		  sprintf(chr, "%0.3f",Da);
+			OLED_ShowChar(x,y,' ',Char_Size);
+					while (chr[j]!='\0')
+			{
+				OLED_ShowChar(x+8,y,chr[j],Char_Size);
+					x+=8;
+				if(x>120){x=0;y+=2;}
+					j++;
+			}
+	}
+
+	  else
+		if ((Da>10)&(100>Da))
+	{
+		sprintf(chr, "%0.3f",Da);
+			while (chr[j]!='\0')
+			{		OLED_ShowChar(x,y,chr[j],Char_Size);
+					x+=8;
+				if(x>120){x=0;y+=2;}
+					j++;
+			}
+	}
+	else
+		if (Da>100)
+	{
+			sprintf(chr, "%0.3f",Da);
+			while (chr[j]!='\0')
+			{		OLED_ShowChar(x,y,chr[j],Char_Size);
+					x+=8;
+				if(x>120){x=0;y+=2;}
+					j++;
+			}
+
+	}
+}
+
+void OLED_ShowFlort_0p2(unsigned char x,unsigned char y,float Da,unsigned char Char_Size)
+{
+	unsigned char j=0;
+	char chr[10]={0};
+
+
+		if(Da<10)		//防止十位变化成个位小数点前移，导致小数点后两位产生一个不变的不可控制数字
+	{
+		  sprintf(chr, "%0.2f",Da);
+			OLED_ShowChar(x,y,' ',Char_Size);
+					while (chr[j]!='\0')
+			{
+				OLED_ShowChar(x+8,y,chr[j],Char_Size);
+					x+=8;
+				if(x>120){x=0;y+=2;}
+					j++;
+			}
+	}
+
+	  else
+		if ((Da>10)&(100>Da))
+	{
+		sprintf(chr, "%0.2f",Da);
+			while (chr[j]!='\0')
+			{		OLED_ShowChar(x,y,chr[j],Char_Size);
+					x+=8;
+				if(x>120){x=0;y+=2;}
+					j++;
+			}
+	}
+	else
+		if (Da>100)
+	{
+			sprintf(chr, "%0.2f",Da);
+			while (chr[j]!='\0')
+			{		OLED_ShowChar(x,y,chr[j],Char_Size);
+					x+=8;
+				if(x>120){x=0;y+=2;}
+					j++;
+			}
+
+	}
+
+}
 
 void OLED_ShowCHinese(unsigned char x,unsigned char y,unsigned char no)
 {      			    

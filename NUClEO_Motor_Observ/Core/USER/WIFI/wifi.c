@@ -19,6 +19,13 @@ void Server_Init(void) {
 	HAL_Delay(300);
 	printf("AT+CWMODE=2\r\n");
 	HAL_Delay(100);
+	printf("AT+CWSAP=\"ESP8266_Observe\",\"12345678\",3,4\r\n");
+
+	HAL_Delay(100);
+	printf("AT+RST\r\n");
+	HAL_Delay(300);
+	printf("AT+CWMODE=2\r\n");
+	HAL_Delay(100);
 	printf("AT+CIPMUX=1\r\n");
 	HAL_Delay(100);
 	printf("AT+CIPSERVER=1,8080\r\n");

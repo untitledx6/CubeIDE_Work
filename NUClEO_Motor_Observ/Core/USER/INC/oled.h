@@ -50,7 +50,8 @@ void Delay_1ms(unsigned int Del_1ms);
 void fill_picture(unsigned char fill_Data);
 void Picture(void);
 void OLED_ShowFlort(unsigned char x,unsigned char y,float Da,unsigned char Char_Size);
-
+void OLED_ShowFlort_0p2(unsigned char x,unsigned char y,float Da,unsigned char Char_Size);
+void OLED_ShowFlort_0p1(unsigned char x,unsigned char y,float Da,unsigned char Char_Size);
 
 
 

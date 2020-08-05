@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADS1118 Debug
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_USBdata Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001led\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Debug\ OLED_I2C/activeLaunchTarget=null\:---
@@ -18,6 +18,10 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_DAC\ Debug/activeLaunchTarge
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_LED\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_LED\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_Motor_Control\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_USBdata\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_USBdata\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_usbDev\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F4_usbDev\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADC\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADC\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_ADS1118\ Debug/activeLaunchMode=debug
@@ -32,6 +36,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI\ Debug/activeLaunch
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI_Client\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUCLEO_WIFI_Client\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUClEO_Motor_Observ\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NUClEO_Motor_Observ\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:choufeng\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:choufeng\ Debug/activeLaunchTarget=null\:---

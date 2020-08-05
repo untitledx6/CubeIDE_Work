@@ -1,0 +1,10 @@
+21:38:23 **** Incremental Build of configuration Debug for project F4_usbDev ****
+make -j8 all 
+arm-none-eabi-size   F4_usbDev.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24864	    464	   3856	  29184	   7200	F4_usbDev.elf
+Finished building: default.size.stdout
+ 
+
+21:38:25 Build Finished. 0 errors, 0 warnings. (took 1s.440ms)
+

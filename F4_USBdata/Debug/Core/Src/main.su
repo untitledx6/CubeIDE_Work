@@ -1,0 +1,4 @@
+main.c:66:5:main	8	static
+main.c:128:6:SystemClock_Config	88	static
+main.c:167:6:USB_SentStr	96	static
+main.c:185:6:Error_Handler	4	static
